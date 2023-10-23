@@ -1,10 +1,15 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './App.tsx'
-import './index.css'
+import { PDFViewer } from '@react-pdf/renderer'
+import { PDF } from './pdf'
+import './main.css'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <App />
+    <div className="pdf-wrapper">
+      <PDFViewer>
+        <PDF />
+      </PDFViewer>
+    </div>
   </React.StrictMode>,
 )
