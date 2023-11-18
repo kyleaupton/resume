@@ -29,7 +29,7 @@ export const styles = StyleSheet.create({
     fontWeight: 900
   },
   title2: {
-    fontSize: 14,
+    fontSize: 12,
     fontWeight: 'thin'
   },
   text: {

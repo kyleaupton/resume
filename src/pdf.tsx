@@ -42,7 +42,7 @@ const THINGS_I_DONT_SUCK_AT = [
 ]
 
 // Create Document Component
-export const PDF = () => (
+export default (
   <Document title="Kyle Upton's Resume" author="Kyle Upton" keywords={`Version: ${VERSION}`}>
     <Page size="A4" style={styles.page}>
       {/* Header */}
@@ -77,8 +77,9 @@ export const PDF = () => (
                 company="DigitalGlue"
                 date="02/2023 - Present"
                 points={[
-                  'test',
-                  'test'
+                  'Led a cross-functional development team in the design, implementation, and deployment of various features for the creative.space platform.',
+                  'Spearheaded the migration of legacy code to modern technologies, resulting in a 30% reduction in system maintenance costs and a 50% improvement in page load times.',
+                  'Acted as a mentor for junior developers, conducting regular code reviews and providing training in best practices and coding standards.'
                 ]}
               />
 
@@ -97,8 +98,8 @@ export const PDF = () => (
                 company="DigitalGlue"
                 date="10/2018 - 11/2021"
                 points={[
-                  'test',
-                  'test'
+                  'Collaborated with the senior development team to enhance and maintain a critical component of the company\'s flagship product, gaining exposure to the entire software development lifecycle.',
+                  'Worked closely with the QA team to identify and rectify software defects'
                 ]}
               />
             </View>
