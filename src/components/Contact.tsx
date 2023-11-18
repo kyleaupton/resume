@@ -24,6 +24,7 @@ export const Contact = (
 
   return (
     <View style={({ flexDirection: 'row', justifyContent: 'center', alignItems: 'center', gap: 8 })}>
+      {/* @ts-ignore */}
       {React.createElement(i, { height, width })}
       {comp}
     </View>

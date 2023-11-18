@@ -1,6 +1,7 @@
+// @ts-ignore
 import React from 'react'
 import { View, Text } from '@react-pdf/renderer'
-import { styles, colors } from '../styles'
+import { styles } from '../styles'
 
 export const WorkExperience = ({ title, company, date, points }: { title: string, company: string, date: string, points: string[] }) => {
   const stuff = points.map(point => <Text key={point} style={styles.text}>{`- ${point}`}</Text>)

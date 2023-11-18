@@ -1,6 +1,7 @@
+// @ts-ignore
 import React from 'react'
 import { Page, Text, View, Document, StyleSheet } from '@react-pdf/renderer'
-import { Divider } from './components/Divider'
+// import { Divider } from './components/Divider'
 import { Contact } from './components/Contact'
 import { Skill } from './components/Skill'
 import { WorkExperience } from './components/WorkExperience'
@@ -43,7 +44,7 @@ const THINGS_I_DONT_SUCK_AT = [
 
 // Create Document Component
 export default (
-  <Document title="Kyle Upton's Resume" author="Kyle Upton" keywords={`Version: ${VERSION}`}>
+  <Document title="Kyle Upton's Resume" author="Kyle Upton" keywords={'Version: 0.1'}>
     <Page size="A4" style={styles.page}>
       {/* Header */}
       <View style={({ ...styles.section, flexDirection: 'row' })}>

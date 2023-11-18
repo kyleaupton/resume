@@ -1,3 +1,4 @@
+// @ts-ignore
 import React from 'react'
 import { Svg, Path } from '@react-pdf/renderer'
 import { colors } from '../styles'
