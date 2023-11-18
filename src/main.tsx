@@ -21,7 +21,7 @@ const App = () => {
   return (
     <div className='pdf-wrapper'>
       <Document key={instance.url} file={instance.url}>
-        <Page pageNumber={1} scale={1.3} />
+        <Page pageNumber={1} scale={1} />
       </Document>
     </div>
   )
