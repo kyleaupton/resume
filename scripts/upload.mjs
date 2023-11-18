@@ -34,6 +34,10 @@ await client.send(
   new PutObjectCommand({
     Bucket: BUCKET,
     Key: 'Kyle_Upton_Resume.pdf',
+    // So when the PDF is opened in the browser
+    // it will be displayed inline not downloaded
+    ContentDisposition: 'inline',
+    ContentType: 'application/pdf',
     Body: fs.createReadStream(TARGET)
   })
 )
