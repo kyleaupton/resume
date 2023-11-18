@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "npx tsx src/build.ts",
-    "publish": "yarn build && node scripts/upload.mjs"
+    "upload": "node scripts/upload.mjs"
   },
   "dependencies": {
     "@react-pdf/renderer": "^3.1.13",
