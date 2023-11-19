@@ -19,11 +19,11 @@ export const WorkExperience = ({ title, company, date, points }: { title: string
         {/* Company name + date range */}
         <View style={({ flexDirection: 'row', alignItems: 'flex-end', gap: 8 })}>
           <Text style={styles.title2}>{company}</Text>
-          <Text style={styles.extraTextSmall}>{date}</Text>
+          <Text style={({ ...styles.extraTextSmall, marginBottom: 1 })}>{date}</Text>
         </View>
 
         {/* Company location */}
-        <Text style={styles.extraTextSmall}>Atlanta, GA</Text>
+        <Text style={({ ...styles.extraTextSmall, marginBottom: 1 })}>Atlanta, GA</Text>
       </View>
 
       {stuff}
