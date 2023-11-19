@@ -22,8 +22,11 @@ jobs:
         env:
           NODE_ENV: development
 
-      - name: Build + upload PDF
-        run: yarn build && yarn upload
+      - name: Build PDF
+        run: yarn build
+
+      - name: Upload PDF
+        run: yarn upload
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}

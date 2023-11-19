@@ -15,14 +15,14 @@ export const styles = StyleSheet.create({
     padding: 10
   },
   section: {
-    margin: 10,
-    padding: 10,
-    gap: 8
+    // margin: 10,
+    padding: 8
+    // gap: 8
   },
   titleBrand: {
     fontSize: 18,
     color: colors.brand,
-    marginBottom: 8
+    marginBottom: 6
   },
   title1: {
     fontSize: 16,
@@ -33,11 +33,13 @@ export const styles = StyleSheet.create({
     fontWeight: 'thin'
   },
   text: {
-    fontSize: 12
+    fontSize: 12,
+    lineHeight: 1.2
   },
   extraTextLarge: {
     fontSize: 14,
-    color: colors.text2
+    color: colors.text2,
+    marginBottom: 4
   },
   extraTextSmall: {
     fontSize: 12,
