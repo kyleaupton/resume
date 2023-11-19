@@ -29,12 +29,12 @@ export const styles = StyleSheet.create({
     fontWeight: 900
   },
   title2: {
-    fontSize: 12,
+    fontSize: 13,
     fontWeight: 'thin'
   },
   text: {
-    fontSize: 12,
-    lineHeight: 1.2
+    fontSize: 11,
+    lineHeight: 1.3
   },
   extraTextLarge: {
     fontSize: 14,
@@ -42,7 +42,7 @@ export const styles = StyleSheet.create({
     marginBottom: 4
   },
   extraTextSmall: {
-    fontSize: 12,
+    fontSize: 10,
     color: colors.text2
   },
   divider: {
