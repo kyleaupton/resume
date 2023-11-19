@@ -1,19 +1,21 @@
 import React, { type FunctionComponent } from 'react'
 import { View, Text, Link } from '@react-pdf/renderer'
-import { Envelope, GitHub, LinkedIn, Location } from './Icons'
+import { Envelope, GitHub, Globe, LinkedIn, Location, Phone } from './Icons'
 import { styles } from '../styles'
 
 const icons: Record<string, FunctionComponent> = {
   envelope: Envelope,
   gitHub: GitHub,
+  globe: Globe,
   linkedIn: LinkedIn,
-  location: Location
+  location: Location,
+  phone: Phone
 }
 
-export const Contact = (
+export default function Contact (
   { text, icon, link, height, width }:
   { text: string, icon: keyof typeof icons, link?: string, height?: number, width?: number }
-) => {
+) {
   const i = icons[icon]
 
   if (!i) {

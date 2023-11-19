@@ -3,7 +3,7 @@ import { StyleSheet } from '@react-pdf/renderer'
 export const colors = {
   brand: '#04395E',
   text1: '#0C120C',
-  text2: '#616163'
+  text2: '#575759'
 }
 
 // Create styles

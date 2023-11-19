@@ -1,16 +1,18 @@
 // @ts-ignore
 import React from 'react'
 import { Page, Text, View, Document } from '@react-pdf/renderer'
-// import { Divider } from './components/Divider'
-import { Contact } from './components/Contact'
-import { Skill } from './components/Skill'
-import { WorkExperience } from './components/WorkExperience'
+import Contact from './components/Contact'
+import Skill from './components/Skill'
+import WorkExperience from './components/WorkExperience'
+import Projects from './components/Projects'
+import Education from './components/Education'
 import { styles } from './styles'
 import { skills } from './skills'
 
 // Create Document Component
 export default (
   <Document title="Kyle Upton's Resume" author="Kyle Upton" keywords={'Version: 0.1'}>
+    {/* Page 1 */}
     <Page size="A4" style={styles.page}>
       {/* Header */}
       <View style={({ ...styles.section, flexDirection: 'row' })}>
@@ -18,7 +20,11 @@ export default (
 
         <View>
           <View>
-            <Text style={styles.titleBrand}>Kyle Upton</Text>
+            <View style={({ flexDirection: 'row', justifyContent: 'space-between' })}>
+              <Text style={styles.titleBrand}>Kyle Upton</Text>
+              {/* <Text style={({ fontSize: 9 })}>View me on GitHub</Text> */}
+            </View>
+
             <Text style={styles.extraTextLarge}>Senior Software Developer</Text>
           </View>
 
@@ -27,11 +33,19 @@ export default (
       </View>
 
       {/* Contact */}
-      <View style={({ padding: `8px ${8 + 12}px`, margin: '0 -12px', flexDirection: 'row', backgroundColor: '#c7c8c9' })}>
+      <View style={({ padding: `8px ${8 + 12}px`, margin: '0 -12px', flexDirection: 'row', gap: 8, justifyContent: 'space-evenly', backgroundColor: '#d4d4d4' })}>
         {/* Left column */}
-        <View style={({ alignItems: 'flex-start', justifyContent: 'center', flexBasis: '50%' })}>
+        <View style={({ alignItems: 'flex-start', justifyContent: 'center' })}>
           <View style={({ flexDirection: 'column', alignItems: 'flex-start', gap: 8 })}>
             <Contact text="kyleaupton@gmail.com" icon="envelope" />
+            <Contact text="+1 (704) 906 2378" icon="phone" />
+          </View>
+        </View>
+
+        {/* Middle column */}
+        <View style={({ alignItems: 'flex-start', justifyContent: 'center' })}>
+          <View style={({ flexDirection: 'column', alignItems: 'flex-start', gap: 8 })}>
+            <Contact text="github.com/kyleaupton" icon="gitHub" link="https://github.com/kyleaupton" height={14} />
             <Contact text="linkedin.com/in/kyle-upton-50bb1a188" icon="linkedIn" link="https://linkedin.com/in/kyle-upton-50bb1a188" height={13} />
           </View>
         </View>
@@ -39,7 +53,7 @@ export default (
         {/* Right column */}
         <View style={({ flexDirection: 'column', alignItems: 'center', justifyContent: 'center' })}>
           <View style={({ flexDirection: 'column', alignItems: 'flex-start', gap: 8 })}>
-            <Contact text="github.com/kyleaupton" icon="gitHub" link="https://github.com/kyleaupton" height={14} />
+            <Contact text="kyleupton.info" icon="globe" link="https://kyleupton.info" />
             <Contact text="Atlanta, GA" icon="location" />
           </View>
         </View>
@@ -99,6 +113,23 @@ export default (
             ]}
           />
         </View>
+      </View>
+    </Page>
+
+    {/* Page 2 */}
+    <Page size="A4" style={styles.page}>
+      {/* Projects */}
+      <View style={({ ...styles.section })}>
+        <Text style={styles.titleBrand}>Projects</Text>
+
+        <Projects />
+      </View>
+
+      {/* Education */}
+      <View style={({ ...styles.section })}>
+        <Text style={styles.titleBrand}>Education</Text>
+
+        <Education />
       </View>
     </Page>
   </Document>
