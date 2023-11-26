@@ -3,35 +3,34 @@ module.exports = {
   env: {
     browser: true,
     es2021: true,
-    node: true
+    node: true,
   },
   extends: [
-    'standard-with-typescript',
-    'plugin:react/recommended'
+    'airbnb',
+    'airbnb/hooks',
+    'airbnb-typescript',
   ],
   overrides: [
     {
       env: {
-        node: true
+        node: true,
       },
       files: ['.eslintrc.{js,cjs}'],
       parserOptions: {
-        sourceType: 'script'
-      }
-    }
+        sourceType: 'script',
+      },
+    },
   ],
   parserOptions: {
     ecmaVersion: 'latest',
-    sourceType: 'module'
+    sourceType: 'module',
+    project: './tsconfig.json',
   },
-  plugins: [
-    'react'
-  ],
   rules: {
     '@typescript-eslint/explicit-function-return-type': 0,
     '@typescript-eslint/strict-boolean-expressions': 0,
     '@typescript-eslint/ban-ts-comment': 0,
     '@typescript-eslint/prefer-ts-expect-error': 0,
-    '@typescript-eslint/prefer-nullish-coalescing': 0
-  }
-}
+    '@typescript-eslint/prefer-nullish-coalescing': 0,
+  },
+};
