@@ -1,30 +1,25 @@
-# Kyle Upton's Resume
+# Professional Resume of Kyle Upton
 
-[![Build](https://github.com/kyleaupton/resume/actions/workflows/build.yml/badge.svg)](https://github.com/kyleaupton/resume/actions/workflows/build.yml)
+[![Build Status](https://github.com/kyleaupton/resume/actions/workflows/build.yml/badge.svg)](https://github.com/kyleaupton/resume/actions/workflows/build.yml)
 
-## Overview
+## Introduction
 
-This repository is the home of my resume. This is a React project that builds to a PDF file. I'm using a package called [`react-pdf/renderer`](https://www.npmjs.com/package/@react-pdf/renderer) to create the PDF.
+Welcome to the repository that hosts the source code for my professional resume. This project, built using React, compiles into a PDF file for easy distribution and printing. The PDF generation is handled by a package known as [`react-pdf/renderer`](https://www.npmjs.com/package/@react-pdf/renderer).
 
-## Todo
+## User Interface
 
-- [ ] Finish the resume
-- [x] Dev Mode: Update PDF on HMR
-- [x] Build script
-- [x] Figure out CD to https://kyleupton.info
+Despite being a React-based project, it's important to note that not all HTML and CSS can be directly translated into a PDF. The `react-pdf/renderer` package necessitates that all template code adheres to the [`React primitives`](https://github.com/lelandrichardson/react-primitives) specification.
 
-## UI
+## Continuous Deployment
 
-While this is a React project, we can't just build any HTML + CSS into a PDF. `react-pdf/renderer` requires that all template code be written to the [`React primitives`](https://github.com/lelandrichardson/react-primitives) specification.
+The project is set up with a continuous deployment pipeline. Upon every commit to the `main` branch, a GitHub action is triggered. This action builds the PDF and subsequently uploads it to a publicly accessible AWS S3 bucket, from where it can be downloaded.
 
-## CD
+## Development Server Configuration
 
-Anytime there is a commit on `main`, a GitHub action will run that builds the PDF and uploads it to a public AWS S3 bucket. People will be able to download from there.
-
-## Dev server setup
+To set up the development server, execute the following commands:
 
 ```bash
-yarn
+yarn install
 
 yarn dev
 ```
