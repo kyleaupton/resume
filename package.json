@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite --open",
-    "build": "npx tsx src/build.cts",
+    "build": "npx tsx src/build.ts",
     "upload": "node scripts/upload.mjs"
   },
   "dependencies": {
