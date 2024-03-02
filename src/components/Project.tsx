@@ -18,7 +18,7 @@ export default function Project({ project }: { project: ProjectType }) {
         {/* eslint-disable-next-line */}
         <Link src={`https://github.com/${project.id}`} style={styles.title2}>{project.title}</Link>
         <View style={({ gap: 4, flexDirection: 'row' })}>
-          {project.icons.map((icon) => <Image src={`${icon}.png`} style={styles.languageIcon} />)}
+          {project.icons.map((icon) => <Image src={`public/${icon}.png`} style={styles.languageIcon} />)}
         </View>
       </View>
 
