@@ -9,7 +9,7 @@ import WorkExperience from './components/WorkExperience';
 import Projects from './components/Projects';
 import Education from './components/Education';
 import { styles } from './styles';
-import { skills } from './skills';
+import skills from './skills';
 
 // Create Document Component
 export default (

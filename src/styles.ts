@@ -49,4 +49,9 @@ export const styles = StyleSheet.create({
     height: 2,
     backgroundColor: colors.text1,
   },
+  languageIcon: {
+    width: 16,
+    height: 16,
+    margin: 2,
+  },
 });

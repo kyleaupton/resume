@@ -1,19 +1,20 @@
-export const skills = [
-  'JavaScript / TypeScript',
+export default [
+  'JavaScript',
+  'TypeScript',
   'HTML',
   'CSS',
   'Node.js',
   'Vue',
-  'React',
   'Electron',
   'Fastify',
   'Express',
   'Python',
+  'Golang',
   'Docker',
   'SQL',
   'git',
   'DevOps',
   'AWS',
   'Linux',
-  'IP/TCP Networking'
-]
+  'IP/TCP Networking',
+];
