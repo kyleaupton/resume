@@ -8,6 +8,7 @@ import Skill from './components/Skill';
 import WorkExperience from './components/WorkExperience';
 import Projects from './components/Projects';
 import Education from './components/Education';
+import Divider from './components/Divider';
 import { styles } from './styles';
 import skills from './skills';
 
@@ -23,7 +24,7 @@ export default (
         <View>
           <View>
             <View style={({ flexDirection: 'row', justifyContent: 'space-between' })}>
-              <Text style={styles.titleBrand}>Kyle Upton</Text>
+              <Text style={({ ...styles.titleBrand, margin: '0 0 4px 0' })}>Kyle Upton</Text>
               {/* <Text style={({ fontSize: 9 })}>View me on GitHub</Text> */}
             </View>
 
@@ -36,7 +37,7 @@ export default (
 
       {/* Contact */}
       <View style={({
-        padding: `8px ${8 + 12}px`, margin: '0 -12px', flexDirection: 'row', gap: 8, justifyContent: 'space-evenly', backgroundColor: '#d4d4d4',
+        padding: '8px 0', margin: '0 -12px', flexDirection: 'row', gap: 8, justifyContent: 'space-around', backgroundColor: '#d4d4d4',
       })}
       >
         {/* Left column */}
@@ -67,9 +68,10 @@ export default (
       {/* Skills */}
       <View style={({ ...styles.section })}>
         <Text style={styles.titleBrand}>Skills</Text>
+        <Divider />
 
         <View style={({
-          display: 'flex', flexDirection: 'row', gap: 4, flexWrap: 'wrap',
+          display: 'flex', flexDirection: 'row', gap: 4, flexWrap: 'wrap', justifyContent: 'space-evenly',
         })}
         >
           {skills.map((thing) => <Skill key={thing} skill={thing} />)}
@@ -79,6 +81,7 @@ export default (
       {/* Work */}
       <View style={({ ...styles.section })}>
         <Text style={styles.titleBrand}>Work Experience</Text>
+        <Divider />
 
         <View style={({ gap: 12 })}>
           <WorkExperience
@@ -131,6 +134,7 @@ export default (
       {/* Projects */}
       <View style={({ ...styles.section })}>
         <Text style={styles.titleBrand}>Projects</Text>
+        <Divider />
 
         <Projects />
       </View>
@@ -138,6 +142,7 @@ export default (
       {/* Education */}
       <View style={({ ...styles.section })}>
         <Text style={styles.titleBrand}>Education</Text>
+        <Divider />
 
         <Education />
       </View>

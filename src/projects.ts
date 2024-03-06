@@ -9,7 +9,7 @@ export default [
     id: 'kyleaupton/leetcode-reminder',
     icons: ['typescript'],
     title: 'LeetScold',
-    description: 'A Discord bot that reminds you to do your daily LeetCode problems. Uses OpenAI\'s GPT models to generate a daily reminder message. Built with TypeScript and Node.js.',
+    description: 'A Discord bot that reminds users to do their daily LeetCode problem. Uses OpenAI\'s Chat GPT API to generate a daily reminder message, and sends that message to a Discord channel at a specified time each day.',
   },
   {
     id: 'kyleaupton/node-rsync',
@@ -27,13 +27,13 @@ export default [
     id: 'kyleaupton/portfolio',
     icons: ['vue', 'typescript'],
     title: 'Portfolio',
-    description: 'Portfolio website built with Vue.js and TypeScript.',
+    description: 'Portfolio website to showcase my projects. Queries GitHub\'s API to dynamically generate project cards. Features a mobile-friendly design, and is built with Vue.js and TypeScript.',
   },
   {
     id: 'kyleaupton/resume',
     icons: ['react', 'typescript'],
     title: 'Resume',
-    description: 'My personal resume written with React directives, programmatically rendered to PDF.',
+    description: 'My personal resume written in React and programmatically rendered to PDF. This project has a CI/CD pipeline that automatically deploys the latest version of my resume to Amazon S3 whenever a commit is pushed.',
   },
   {
     id: 'kyleaupton/TransactionTracker',

@@ -56,7 +56,7 @@ export default function WorkExperience(
       </View>
 
       {/* Positions */}
-      <View style={({ flexDirection: 'column', gap: 4 })}>
+      <View style={({ flexDirection: 'column', gap: 12 })}>
         {renderedPositions}
       </View>
     </View>

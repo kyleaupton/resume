@@ -22,11 +22,11 @@ export const styles = StyleSheet.create({
   titleBrand: {
     fontSize: 18,
     color: colors.brand,
-    marginBottom: 6,
+    fontWeight: 'extrabold',
   },
   title1: {
     fontSize: 16,
-    fontWeight: 900,
+    fontWeight: 9000,
   },
   title2: {
     fontSize: 13,
