@@ -59,7 +59,7 @@ export default (
         {/* Right column */}
         <View style={({ flexDirection: 'column', alignItems: 'center', justifyContent: 'center' })}>
           <View style={({ flexDirection: 'column', alignItems: 'flex-start', gap: 8 })}>
-            <Contact text="kyleupton.info" icon="globe" link="https://kyleupton.info" />
+            <Contact text="kyleupton.dev" icon="globe" link="https://kyleupton.info" />
             <Contact text="Atlanta, GA" icon="location" />
           </View>
         </View>
