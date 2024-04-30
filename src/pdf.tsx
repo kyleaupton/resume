@@ -52,7 +52,7 @@ export default (
         <View style={({ alignItems: 'flex-start', justifyContent: 'center' })}>
           <View style={({ flexDirection: 'column', alignItems: 'flex-start', gap: 8 })}>
             <Contact text="github.com/kyleaupton" icon="gitHub" link="https://github.com/kyleaupton" height={14} />
-            <Contact text="linkedin.com/in/kyle-upton-50bb1a188" icon="linkedIn" link="https://linkedin.com/in/kyle-upton-50bb1a188" height={13} />
+            <Contact text="linkedin.com/in/kyle-upton-dev" icon="linkedIn" link="https://www.linkedin.com/in/kyle-upton-dev" height={13} />
           </View>
         </View>
 
