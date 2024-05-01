@@ -31,7 +31,7 @@ export default (
             <Text style={styles.extraTextLarge}>Senior Software Developer</Text>
           </View>
 
-          <Text style={styles.text}>Dynamic and results-oriented Full Stack Software Engineer with a passion for crafting efficient, scalable solutions. Leveraging 6 of experience in JavaScript and TypeScript, I specialize in bridging the gap between front-end user experience and back-end functionality. Committed to staying abreast of emerging technologies and industry trends to drive innovation and deliver cutting-edge solutions.</Text>
+          <Text style={styles.text}>Dynamic and results-oriented Full Stack Software Engineer with a passion for crafting efficient, scalable solutions. Leveraging 6 years of experience in JavaScript and TypeScript, I specialize in bridging the gap between front-end user experience and back-end functionality. Committed to staying abreast of emerging technologies and industry trends to drive innovation and deliver cutting-edge solutions.</Text>
         </View>
       </View>
 
