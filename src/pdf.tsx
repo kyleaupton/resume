@@ -9,21 +9,16 @@ import {
   StyleSheet,
 } from '@react-pdf/renderer';
 import Contact from './components/Contact';
-import Skill from './components/Skill';
 import WorkExperience from './components/WorkExperience';
-import Projects from './components/Projects';
-import Education from './components/Education';
 import LineGraph from './components/LineGraph';
 import Divider from './components/Divider';
 import CustomLink from './components/Link';
 import {
   Book,
   Briefecase,
-  Code,
   Code2,
   Gear,
   Hammer,
-  Terminal,
   User,
   CircleIcon,
 } from './components/Icons';
@@ -130,7 +125,7 @@ export default (
 
           <View style={{ gap: '8px' }}>
             <CustomLink text="Boot Builder" url="https://github.com/kyleaupton/boot-builder" />
-            <CustomLink text="Leet Scold" url="https://github.com/kyleaupton/leet-scold" />
+            <CustomLink text="Leet-scold" url="https://github.com/kyleaupton/leet-scold" />
             <CustomLink text="Glob Copy" url="https://github.com/kyleaupton/glob-copy" />
             <CustomLink text="Node Rsync" url="https://github.com/kyleaupton/node-rsync" />
             <CustomLink text="Portfolio" url="https://github.com/kyleaupton/portfolio" />
@@ -144,24 +139,44 @@ export default (
         style={{
           flexBasis: '65%',
           flexDirection: 'column',
-          gap: '32px',
-          padding: '48px 18px 18px 18px',
+          gap: '18px',
+          padding: '18px',
         }}
       >
         {/* Name */}
         <View
           style={{
-            flexDirection: 'column',
+            flexDirection: 'row',
             width: '100%',
             alignItems: 'center',
           }}
         >
-          <Text style={styles.titleBrand}>Kyle Upton</Text>
-          <Text style={styles.extraTextLarge}>Senior Software Developer</Text>
+          <View style={{ flexGrow: 1 }}>
+            <Text style={styles.titleBrand}>Kyle Upton</Text>
+            <Text style={styles.extraTextLarge}>Senior Software Developer</Text>
+          </View>
+
+          {/* Contact */}
+          <View
+            style={({
+              // padding: '8px 0',
+              // margin: '0 -12px',
+              flexDirection: 'column',
+              gap: 8,
+              // width: '100%',
+              alignItems: 'flex-start',
+            })}
+          >
+            <Contact text="kyleaupton@gmail.com" icon="envelope" />
+            <Contact text="+1 (704) 906 2378" icon="phone" />
+            <Contact text="Atlanta, GA" icon="location" />
+            <Contact text="in/kyle-upton-dev" icon="linkedIn" link="https://www.linkedin.com/in/kyle-upton-dev" height={13} />
+            <Contact text="kyleupton.dev" icon="globe" link="https://kyleupton.dev" />
+          </View>
         </View>
 
         {/* Work Experience */}
-        <View style={{ gap: '6px' }}>
+        <View style={{ gap: '6px', marginTop: '-16px' }}>
           <View style={{ flexDirection: 'row', alignItems: 'center', gap: '18px' }}>
             <CircleIcon width={28} height={28} icon={<Briefecase color="white" height={16} width={16} />} />
             <View style={{ flexGrow: 1 }}>
