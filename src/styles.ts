@@ -4,6 +4,8 @@ export const colors = {
   brand: '#04395E',
   text1: '#0C120C',
   text2: '#575759',
+  background: '#E4E4E4',
+  background2: '#c4c4c4',
 };
 
 // Create styles
@@ -32,9 +34,13 @@ export const styles = StyleSheet.create({
     fontSize: 13,
     fontWeight: 'thin',
   },
+  title3: {
+    fontSize: 11,
+    fontWeight: 'bold',
+  },
   text: {
     fontSize: 11,
-    lineHeight: 1.3,
+    lineHeight: 1.2,
   },
   extraTextLarge: {
     fontSize: 14,

@@ -1,89 +1,175 @@
 // @ts-ignore
 import React from 'react';
 import {
-  Page, Text, View, Document,
+  Page,
+  Text,
+  View,
+  Document,
+  Image,
+  StyleSheet,
 } from '@react-pdf/renderer';
 import Contact from './components/Contact';
 import Skill from './components/Skill';
 import WorkExperience from './components/WorkExperience';
 import Projects from './components/Projects';
 import Education from './components/Education';
+import LineGraph from './components/LineGraph';
 import Divider from './components/Divider';
-import { styles } from './styles';
-import skills from './skills';
+import CustomLink from './components/Link';
+import {
+  Book,
+  Briefecase,
+  Code,
+  Code2,
+  Gear,
+  Hammer,
+  Terminal,
+  User,
+  CircleIcon,
+} from './components/Icons';
+import { styles, colors } from './styles';
+
+const s = StyleSheet.create({
+  leftSectionItem: {
+    gap: '18px',
+    width: '100%',
+  },
+  leftSectionTitle: {
+    position: 'relative',
+    gap: '12px',
+    width: '100%',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+});
 
 // Create Document Component
 export default (
   <Document title="Kyle Upton's Resume" author="Kyle Upton" keywords="Version: 0.1">
-    {/* Page 1 */}
-    <Page size="A4" style={styles.page}>
-      {/* Header */}
-      <View style={({ ...styles.section, flexDirection: 'row' })}>
-        {/* This would be the view for a picture */}
-
-        <View>
-          <View>
-            <View style={({ flexDirection: 'row', justifyContent: 'space-between' })}>
-              <Text style={({ ...styles.titleBrand, margin: '0 0 4px 0' })}>Kyle Upton</Text>
-              {/* <Text style={({ fontSize: 9 })}>View me on GitHub</Text> */}
-            </View>
-
-            <Text style={styles.extraTextLarge}>Senior Software Developer</Text>
-          </View>
-
-          <Text style={styles.text}>Dynamic and results-oriented Full Stack Software Engineer with a passion for crafting efficient, scalable solutions. Leveraging 6 years of experience in JavaScript and TypeScript, I specialize in bridging the gap between front-end user experience and back-end functionality. Committed to staying abreast of emerging technologies and industry trends to drive innovation and deliver cutting-edge solutions.</Text>
-        </View>
-      </View>
-
-      {/* Contact */}
-      <View style={({
-        padding: '8px 0', margin: '0 -12px', flexDirection: 'row', gap: 8, justifyContent: 'space-around', backgroundColor: '#d4d4d4',
-      })}
+    <Page size="A4" style={{ flexDirection: 'row' }}>
+      {/* Left column */}
+      <View
+        style={{
+          alignItems: 'center',
+          // justifyContent: 'center',
+          gap: '32px',
+          flexBasis: '35%',
+          backgroundColor: colors.background,
+          padding: '32px 18px 18px 18px',
+        }}
       >
-        {/* Left column */}
-        <View style={({ alignItems: 'flex-start', justifyContent: 'center' })}>
-          <View style={({ flexDirection: 'column', alignItems: 'flex-start', gap: 8 })}>
-            <Contact text="kyleaupton@gmail.com" icon="envelope" />
-            <Contact text="+1 (704) 906 2378" icon="phone" />
+        {/* Profile photo */}
+        <View>
+          <Image src="public/avatar.png" style={{ height: '64px', width: '64px' }} />
+        </View>
+
+        {/* About me */}
+        <View style={s.leftSectionItem}>
+          <View style={s.leftSectionTitle}>
+            <View style={{ position: 'absolute', left: 0 }}>
+              <CircleIcon icon={<User color="white" />} />
+            </View>
+            <Text style={{ ...styles.title1 }}>About Me</Text>
+          </View>
+
+          <Text style={styles.text}>
+            I am a full-stack developer with a passion for creating beautiful and functional
+            applications. I have experience with a variety of technologies and am always eager to
+            learn more.
+          </Text>
+        </View>
+
+        {/* Languages */}
+        <View style={s.leftSectionItem}>
+          <View style={s.leftSectionTitle}>
+            <View style={{ position: 'absolute', left: 0 }}>
+              <CircleIcon icon={<Code2 color="white" height={14} width={14} />} />
+            </View>
+            <Text style={styles.title1}>Languages</Text>
+          </View>
+
+          <View style={{ gap: '6px' }}>
+            <LineGraph label="JavaScript" percentage={100} />
+            <LineGraph label="TypeScript" percentage={100} />
+            <LineGraph label="Python" percentage={70} />
+            <LineGraph label="SQL" percentage={50} />
+            <LineGraph label="Go" percentage={50} />
+            <LineGraph label="Java" percentage={40} />
+            <LineGraph label="C/C++" percentage={25} />
           </View>
         </View>
 
-        {/* Middle column */}
-        <View style={({ alignItems: 'flex-start', justifyContent: 'center' })}>
-          <View style={({ flexDirection: 'column', alignItems: 'flex-start', gap: 8 })}>
-            <Contact text="github.com/kyleaupton" icon="gitHub" link="https://github.com/kyleaupton" height={14} />
-            <Contact text="linkedin.com/in/kyle-upton-dev" icon="linkedIn" link="https://www.linkedin.com/in/kyle-upton-dev" height={13} />
+        {/* Technologies */}
+        <View style={s.leftSectionItem}>
+          <View style={s.leftSectionTitle}>
+            <View style={{ position: 'absolute', left: 0 }}>
+              <CircleIcon icon={<Gear color="white" height={14} width={14} />} />
+            </View>
+            <Text style={styles.title1}>Technologies</Text>
+          </View>
+
+          <View style={{ gap: '6px' }}>
+            <LineGraph label="Node.js" percentage={100} />
+            <LineGraph label="Vue" percentage={100} />
+            <LineGraph label="Electron" percentage={100} />
+            <LineGraph label="Tailwind" percentage={90} />
+            <LineGraph label="Nuxt" percentage={80} />
+            <LineGraph label="Docker" percentage={50} />
+            <LineGraph label="React" percentage={50} />
           </View>
         </View>
 
-        {/* Right column */}
-        <View style={({ flexDirection: 'column', alignItems: 'center', justifyContent: 'center' })}>
-          <View style={({ flexDirection: 'column', alignItems: 'flex-start', gap: 8 })}>
-            <Contact text="kyleupton.dev" icon="globe" link="https://kyleupton.info" />
-            <Contact text="Atlanta, GA" icon="location" />
+        {/* Projects */}
+        <View style={s.leftSectionItem}>
+          <View style={s.leftSectionTitle}>
+            <View style={{ position: 'absolute', left: 0 }}>
+              <CircleIcon icon={<Hammer color="white" height={14} width={14} />} />
+            </View>
+            <Text style={styles.title1}>Projects</Text>
+          </View>
+
+          <View style={{ gap: '8px' }}>
+            <CustomLink text="Boot Builder" url="https://github.com/kyleaupton/boot-builder" />
+            <CustomLink text="Leet Scold" url="https://github.com/kyleaupton/leet-scold" />
+            <CustomLink text="Glob Copy" url="https://github.com/kyleaupton/glob-copy" />
+            <CustomLink text="Node Rsync" url="https://github.com/kyleaupton/node-rsync" />
+            <CustomLink text="Portfolio" url="https://github.com/kyleaupton/portfolio" />
+            <CustomLink text="Win ISO" url="https://github.com/kyleaupton/win-iso" />
           </View>
         </View>
       </View>
 
-      {/* Skills */}
-      <View style={({ ...styles.section })}>
-        <Text style={styles.titleBrand}>Skills</Text>
-        <Divider />
-
-        <View style={({
-          display: 'flex', flexDirection: 'row', gap: 4, flexWrap: 'wrap', justifyContent: 'space-evenly',
-        })}
+      {/* Right column */}
+      <View
+        style={{
+          flexBasis: '65%',
+          flexDirection: 'column',
+          gap: '32px',
+          padding: '48px 18px 18px 18px',
+        }}
+      >
+        {/* Name */}
+        <View
+          style={{
+            flexDirection: 'column',
+            width: '100%',
+            alignItems: 'center',
+          }}
         >
-          {skills.map((thing) => <Skill key={thing} skill={thing} />)}
+          <Text style={styles.titleBrand}>Kyle Upton</Text>
+          <Text style={styles.extraTextLarge}>Senior Software Developer</Text>
         </View>
-      </View>
 
-      {/* Work */}
-      <View style={({ ...styles.section })}>
-        <Text style={styles.titleBrand}>Work Experience</Text>
-        <Divider />
+        {/* Work Experience */}
+        <View style={{ gap: '6px' }}>
+          <View style={{ flexDirection: 'row', alignItems: 'center', gap: '18px' }}>
+            <CircleIcon width={28} height={28} icon={<Briefecase color="white" height={16} width={16} />} />
+            <View style={{ flexGrow: 1 }}>
+              <Text style={styles.title1}>Work Experience</Text>
+              <Divider />
+            </View>
+          </View>
 
-        <View style={({ gap: 12 })}>
           <WorkExperience
             company="DigitalGlue"
             date="Oct 2018 - Present"
@@ -93,58 +179,52 @@ export default (
                 title: 'Senior Software Developer',
                 points: [
                   'Led and supervised a team of 3 junior developers, providing mentorship, conducting code reviews, and establishing coding standards.',
-                  'Designed, implemented, and deployed new features, translating project manager requests into effective software solutions.',
-                  'Successfully redesigned the application\'s web stack, eliminating unnecessary middleware layers to enhance developer experience, eliminate bugs, and improve security.',
-                  'Refactored the backend REST API with modern JavaScript practices, eliminating blocking I/O to substantially improve performance.',
+                  'Directed a company-wide transition from JavaScript to TypeScript, improving code quality and maintainability, which reduced bugs by 25% and increased developer productivity by 20%.',
                   'Spearheaded the design and implementation of an update pipeline for the company\'s Electron.js desktop application, enabling over-the-air updates for users.',
-                  'Optimized and refactored legacy features to improve overall system performance.',
+                  'Led the refactoring of the product\'s REST API using modern JavaScript practices, reducing page load times by 35% through the elimination of blocking I/O.',
                 ],
                 date: 'Feb 2023 - Present',
               },
               {
                 title: 'Software Developer',
                 points: [
-                  'Designed and implemented new features, contributing to the enhancement of product functionality.',
+                  'Designed and implemented new features for the core product, translating project manager requests into practical software solutions.',
                   'Provided direct support to clients and effectively debugged production issues.',
-                  'Played a key role as the manager\'s right-hand-person, assisting junior developers and contributing to their professional development.',
                   'Maintained multiple production codebases, ensuring the stability and efficiency of the software.',
                   'Developed a Python API to programmatically control BlackMagic Design\'s DaVinci Resolve video editing software, showcased in a demo that won the NAB Show Product of the Year 2022.',
+                  'Successfully redesigned the products\'s web stack, eliminating unnecessary middleware layers to improve security, eliminate bugs, and enhance DX.',
                 ],
                 date: 'Nov 2021 - Feb 2023',
               },
               {
                 title: 'Intern',
                 points: [
-                  'Tested software and contributed to the development of new features.',
-                  'Collaborated with both backend and frontend teams to assist in various tasks.',
-                  'Created a set of email templates for use in the notification system, enhancing communication efficiency.',
-                  'Addressed and resolved bugs, contributing to the overall improvement of software quality.',
-                  'Sharpened web development skills through hands-on experience and continuous learning.',
+                  'Collaborated with both backend and frontend teams to contribe to the development of new features.',
+                  'Conducted thorough testing of new features, ensuring functionality and performance met quality standards before deployment.',
+                  'Created a set of email templates for use in the product\'s notification system, enhancing communication efficiency.',
+                  'Sharpened full-stack web development skills through hands-on experience and continuous learning.',
                 ],
                 date: 'Oct 2018 - Nov 2021',
               },
             ]}
           />
         </View>
-      </View>
-    </Page>
 
-    {/* Page 2 */}
-    <Page size="A4" style={styles.page}>
-      {/* Projects */}
-      <View style={({ ...styles.section })}>
-        <Text style={styles.titleBrand}>Projects</Text>
-        <Divider />
+        {/* Education */}
+        <View style={{ gap: '6px' }}>
+          <View style={{ flexDirection: 'row', alignItems: 'center', gap: '18px' }}>
+            <CircleIcon width={28} height={28} icon={<Book color="white" height={16} width={16} />} />
+            <View style={{ flexGrow: 1 }}>
+              <Text style={styles.title1}>Education</Text>
+              <Divider />
+            </View>
+          </View>
 
-        <Projects />
-      </View>
-
-      {/* Education */}
-      <View style={({ ...styles.section })}>
-        <Text style={styles.titleBrand}>Education</Text>
-        <Divider />
-
-        <Education />
+          <View style={{ flexDirection: 'column' }}>
+            <Text style={styles.title2}>BS Computer Science</Text>
+            <Text style={styles.title3}>Kennesaw State University</Text>
+          </View>
+        </View>
       </View>
     </Page>
   </Document>
