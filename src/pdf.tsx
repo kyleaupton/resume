@@ -47,15 +47,15 @@ export default (
         style={{
           alignItems: 'center',
           // justifyContent: 'center',
-          gap: '32px',
+          gap: '28px',
           flexBasis: '35%',
           backgroundColor: colors.background,
-          padding: '32px 18px 18px 18px',
+          padding: '28px 18px 18px 18px',
         }}
       >
         {/* Profile photo */}
         <View>
-          <Image src="public/avatar.png" style={{ height: '64px', width: '64px' }} />
+          <Image src="public/attempt-2.png" style={{ height: '100px', width: 'auto' }} />
         </View>
 
         {/* About me */}
@@ -123,13 +123,13 @@ export default (
             <Text style={styles.title1}>Projects</Text>
           </View>
 
-          <View style={{ gap: '8px' }}>
-            <CustomLink text="Boot Builder" url="https://github.com/kyleaupton/boot-builder" />
-            <CustomLink text="Leet-scold" url="https://github.com/kyleaupton/leet-scold" />
-            <CustomLink text="Glob Copy" url="https://github.com/kyleaupton/glob-copy" />
-            <CustomLink text="Node Rsync" url="https://github.com/kyleaupton/node-rsync" />
-            <CustomLink text="Portfolio" url="https://github.com/kyleaupton/portfolio" />
-            <CustomLink text="Win ISO" url="https://github.com/kyleaupton/win-iso" />
+          <View style={{ gap: '6px' }}>
+            <CustomLink text="Boot Builder" url="https://github.com/kyleaupton/boot-builder" fontSize={12} fontWeight={600} />
+            <CustomLink text="Leet-scold" url="https://github.com/kyleaupton/leet-scold" fontSize={12} fontWeight={600} />
+            <CustomLink text="Glob Copy" url="https://github.com/kyleaupton/glob-copy" fontSize={12} fontWeight={600} />
+            <CustomLink text="Node Rsync" url="https://github.com/kyleaupton/node-rsync" fontSize={12} fontWeight={600} />
+            <CustomLink text="Portfolio" url="https://github.com/kyleaupton/portfolio" fontSize={12} fontWeight={600} />
+            <CustomLink text="Win ISO" url="https://github.com/kyleaupton/win-iso" fontSize={12} fontWeight={600} />
           </View>
         </View>
       </View>

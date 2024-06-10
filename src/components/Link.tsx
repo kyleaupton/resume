@@ -6,11 +6,13 @@ import { External } from './Icons';
 export default function Link({
   text,
   url,
-  textSize = 11,
+  fontSize = 11,
+  fontWeight = 600,
 }: {
   text: string,
   url: string,
-  textSize?: number
+  fontSize?: number
+  fontWeight?: number
 }) {
   return (
     <ExtLink
@@ -24,7 +26,7 @@ export default function Link({
         textDecoration: 'none',
       }}
     >
-      <Text style={{ fontSize: textSize }}>{text}</Text>
+      <Text style={{ fontSize, fontWeight }}>{text}</Text>
       <View style={{ marginTop: 2 }}>
         <External height={10} width={10} />
       </View>
