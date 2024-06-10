@@ -66,7 +66,7 @@ export default function WorkExperience({
         {/* Company location + date range */}
         <View style={({ gap: 6, flexDirection: 'row' })}>
           <Location height={12} width={12} />
-          <Text style={({ ...styles.title3, marginRight: 4 })}>{location}</Text>
+          <Text style={({ ...styles.title3, marginRight: 3 })}>{location}</Text>
           <Calander height={12} width={12} />
           <Text style={({ ...styles.title3 })}>{date}</Text>
         </View>
