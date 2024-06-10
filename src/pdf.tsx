@@ -187,6 +187,7 @@ export default (
 
           <WorkExperience
             company="DigitalGlue"
+            companyUrl="https://www.linkedin.com/company/digitalglue/"
             date="Oct 2018 - Present"
             location="Atlanta, GA"
             positions={[

@@ -1,24 +1,28 @@
 // @ts-ignore
 import React from 'react';
 import { View, Text } from '@react-pdf/renderer';
+import CustomLink from './Link';
 import { Location, Calander } from './Icons';
 import { styles } from '../styles';
 
-export default function WorkExperience(
-  {
-    company, date, location, positions,
-  }:
-  {
-    company: string
+export default function WorkExperience({
+  company,
+  companyUrl,
+  date,
+  location,
+  positions,
+}:
+{
+  company: string
+  companyUrl: string
+  date: string
+  location: string
+  positions: Array<{
+    title: string
+    points: string[]
     date: string
-    location: string
-    positions: Array<{
-      title: string
-      points: string[]
-      date: string
-    }>
-  },
-) {
+  }>
+}) {
   const renderedPositions = positions.map((position) => {
     const renderedPoints = position.points.map((point) => (
       <View key={point} style={({ flexDirection: 'row', gap: 4, padding: '0 12px 0 12px' })}>
@@ -54,7 +58,10 @@ export default function WorkExperience(
     <View style={({ flexDirection: 'column', gap: 10 })}>
       <View style={({ flexDirection: 'column' })}>
         {/* Company name */}
-        <Text style={({ ...styles.title1, marginBottom: 4 })}>{company}</Text>
+        {/* <Text style={({ ...styles.title1, marginBottom: 4 })}>{company}</Text> */}
+        <View style={{ marginBottom: 4 }}>
+          <CustomLink text={company} fontSize={16} fontWeight={9000} url={companyUrl} />
+        </View>
 
         {/* Company location + date range */}
         <View style={({ gap: 6, flexDirection: 'row' })}>
@@ -71,30 +78,4 @@ export default function WorkExperience(
       </View>
     </View>
   );
-
-  // const stuff = points.map(point => (
-  //   <View key={point} style={({ flexDirection: 'row', gap: 4, padding: '0 24px 0 12px' })}>
-  //     <Text style={styles.text}>•</Text>
-  //     <Text style={styles.text}>{point}</Text>
-  //   </View>
-  // ))
-
-  // return (
-  //   <View style={({ flexDirection: 'column', gap: 4 })}>
-  //     <Text style={styles.title1}>{title}</Text>
-
-  //     <View style={({ flexDirection: 'row', justifyContent: 'space-between', marginBottom: 4, marginTop: -10 })}>
-  //       {/* Company name */}
-  //       <Text style={({ ...styles.title2, alignSelf: 'flex-end' })}>{company}</Text>
-
-  //       {/* Company location + date range */}
-  //       <View style={({ alignItems: 'flex-end' })}>
-  //         <Text style={({ ...styles.extraTextSmall, marginBottom: 1 })}>Atlanta, GA</Text>
-  //         <Text style={({ ...styles.extraTextSmall, marginBottom: 1 })}>{date}</Text>
-  //       </View>
-  //     </View>
-
-  //     {stuff}
-  //   </View>
-  // )
 }
