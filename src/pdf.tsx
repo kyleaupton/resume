@@ -124,12 +124,12 @@ export default (
           </View>
 
           <View style={{ gap: '6px' }}>
+            <CustomLink text="Bucket Browser" url="https://github.com/kyleaupton/bucket-browser" fontSize={12} fontWeight={600} />
             <CustomLink text="Boot Builder" url="https://github.com/kyleaupton/boot-builder" fontSize={12} fontWeight={600} />
-            <CustomLink text="Leet-scold" url="https://github.com/kyleaupton/leet-scold" fontSize={12} fontWeight={600} />
+            <CustomLink text="Typed Electron IPC" url="https://github.com/kyleaupton/typed-electron-ipc" fontSize={12} fontWeight={600} />
             <CustomLink text="Glob Copy" url="https://github.com/kyleaupton/glob-copy" fontSize={12} fontWeight={600} />
             <CustomLink text="Node Rsync" url="https://github.com/kyleaupton/node-rsync" fontSize={12} fontWeight={600} />
             <CustomLink text="Portfolio" url="https://github.com/kyleaupton/portfolio" fontSize={12} fontWeight={600} />
-            <CustomLink text="Win ISO" url="https://github.com/kyleaupton/win-iso" fontSize={12} fontWeight={600} />
           </View>
         </View>
       </View>
