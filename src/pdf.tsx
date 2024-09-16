@@ -55,7 +55,7 @@ export default (
       >
         {/* Profile photo */}
         <View>
-          <Image src="public/attempt-2.png" style={{ height: '100px', width: 'auto' }} />
+          <Image src="public/attempt-2-min.png" style={{ height: '100px', width: 'auto' }} />
         </View>
 
         {/* About me */}
