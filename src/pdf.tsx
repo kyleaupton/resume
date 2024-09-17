@@ -215,7 +215,7 @@ export default (
               {
                 title: 'Intern',
                 points: [
-                  'Collaborated with both backend and frontend teams to contribe to the development of new features.',
+                  'Collaborated with both backend and frontend teams to contribute to the development of new features.',
                   'Conducted thorough testing of new features, ensuring functionality and performance met quality standards before deployment.',
                   'Created a set of email templates for use in the product\'s notification system, enhancing communication efficiency.',
                   'Sharpened full-stack web development skills through hands-on experience and continuous learning.',
