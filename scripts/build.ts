@@ -2,7 +2,7 @@ import fs from 'fs/promises';
 import path from 'path';
 import url from 'url';
 import { renderToFile } from '@react-pdf/renderer';
-import PDF from './pdf';
+import PDF from '../src/variants/fancy-1/pdf';
 
 const doRender = async () => {
   const dist = path.resolve(path.dirname(url.fileURLToPath(import.meta.url)), '..', 'dist');

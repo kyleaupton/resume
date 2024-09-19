@@ -2,13 +2,14 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 import { PDFViewer } from '@react-pdf/renderer';
-import Fancy1 from './variants/fancy-1/pdf';
+import Fancy1 from './variants/fancy-1';
+import Plain1 from './variants/plain-1';
 import './main.css';
 
 function DocumentWrapper() {
   return (
     <PDFViewer>
-      <Fancy1 />
+      <Plain1 />
     </PDFViewer>
   );
 }

@@ -8,11 +8,6 @@ import {
   Image,
   StyleSheet,
 } from '@react-pdf/renderer';
-import Contact from './components/Contact';
-import WorkExperience from './components/WorkExperience';
-import LineGraph from './components/LineGraph';
-import Divider from './components/Divider';
-import CustomLink from './components/Link';
 import {
   Book,
   Briefecase,
@@ -21,7 +16,12 @@ import {
   Hammer,
   User,
   CircleIcon,
-} from './components/Icons';
+} from '@/icons';
+import Contact from './components/Contact';
+import WorkExperience from './components/WorkExperience';
+import LineGraph from './components/LineGraph';
+import Divider from './components/Divider';
+import CustomLink from './components/Link';
 import { styles, colors } from './styles';
 
 const s = StyleSheet.create({

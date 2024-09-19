@@ -1,6 +1,5 @@
 import React, { type FunctionComponent } from 'react';
 import { View, Text } from '@react-pdf/renderer';
-import CustomLink from './Link';
 import {
   Envelope,
   GitHub,
@@ -8,7 +7,8 @@ import {
   LinkedIn,
   Location,
   Phone,
-} from './Icons';
+} from '@/icons';
+import CustomLink from './Link';
 import { styles } from '../styles';
 
 const icons: Record<string, FunctionComponent> = {
@@ -20,7 +20,7 @@ const icons: Record<string, FunctionComponent> = {
   phone: Phone,
 };
 
-export default function Contact({
+function Contact({
   text,
   icon,
   link,
@@ -56,3 +56,11 @@ export default function Contact({
     </View>
   );
 }
+
+Contact.defaultProps = {
+  link: '',
+  height: 16,
+  width: 16,
+};
+
+export default Contact;

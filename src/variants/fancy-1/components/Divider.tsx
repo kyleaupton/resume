@@ -1,7 +1,6 @@
 // @ts-ignore
 import React from 'react';
 import { View } from '@react-pdf/renderer';
-import { colors } from '../styles';
 
 export default function Divider() {
   return (

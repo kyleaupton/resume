@@ -1,18 +1,17 @@
 // @ts-ignore
 import React from 'react';
 import { Link as ExtLink, Text, View } from '@react-pdf/renderer';
+import { type Style } from '@react-pdf/types';
 import { External } from '@/icons';
 
-function Link({
+export default function Link({
   text,
   url,
-  fontSize = 11,
-  fontWeight = 600,
+  style = {},
 }: {
   text: string,
   url: string,
-  fontSize?: number
-  fontWeight?: number
+  style?: Style | Style[],
 }) {
   return (
     <ExtLink
@@ -26,7 +25,7 @@ function Link({
         textDecoration: 'none',
       }}
     >
-      <Text style={{ fontSize, fontWeight }}>{text}</Text>
+      <Text style={style}>{text}</Text>
       <View style={{ marginTop: 2 }}>
         <External height={10} width={10} />
       </View>
@@ -35,8 +34,5 @@ function Link({
 }
 
 Link.defaultProps = {
-  fontSize: 11,
-  fontWeight: 600,
+  style: {},
 };
-
-export default Link;

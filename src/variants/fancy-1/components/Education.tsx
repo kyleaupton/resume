@@ -6,7 +6,7 @@ import { styles } from '../styles';
 const completedCourses = ['Data Structures', 'Algorithm Analysis', 'Introduction to Database Systems', 'Software Engineering', 'Programming Principles 1 & 2'];
 const extraCurriculars = ['Future Business Leaders of America (FBLA)', 'National Technical Honor Society (NTHS)', 'Forsyth County Hockey Team Alternate Captain'];
 
-export default function Education() {
+function Education() {
   const renderedCourses = completedCourses.map((course) => (
     <View key={course} style={({ flexDirection: 'row', gap: 4, padding: '0 12px' })}>
       <Text style={styles.text}>•</Text>
@@ -53,3 +53,5 @@ export default function Education() {
     </View>
   );
 }
+
+export default Education;
