@@ -25,7 +25,7 @@ export default function PDF() {
     <Document title="Kyle Upton's Resume" author="Kyle Upton" keywords="Version: 0.1">
       <Page
         size="A4"
-        style={[s.text, { gap: 12, padding: 36 }]}
+        style={[s.text, { gap: 12, padding: 36, paddingTop: 30 }]}
       >
         {/* <Page size="A4"> */}
         {/* Header */}
@@ -34,7 +34,7 @@ export default function PDF() {
             <Text style={[s.title2xl]}>Kyle Upton</Text>
             <Text style={[s.textLg, s.textMuted, { fontWeight: 'semibold' }]}>Senior Software Developer</Text>
           </View>
-          <View style={[{ lineHeight: 1.4 }]}>
+          <View style={[{ lineHeight: 1.5 }]}>
             <Text>(704)-906-2378</Text>
             <Text>kyleaupton@gmail.com</Text>
             <Text>linkedin.com/in/kyle-upton-dev</Text>
