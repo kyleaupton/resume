@@ -71,7 +71,7 @@ export const s = StyleSheet.create({
     // Default text style
     fontSize: 10,
     lineHeight: 1.32,
-    fontFamily: 'Poppins',
+    fontFamily: 'Open Sans',
   },
   textLg: {
     fontSize: 12,
