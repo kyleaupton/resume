@@ -7,9 +7,23 @@ import Plain1 from './variants/plain-1';
 import './main.css';
 
 function DocumentWrapper() {
+  const { pathname } = window.location;
+  let PdfComponent;
+  switch (pathname) {
+    case '/fancy-1':
+      PdfComponent = Fancy1;
+      break;
+    case '/plain-1':
+      PdfComponent = Plain1;
+      break;
+    default:
+      PdfComponent = Plain1;
+      break;
+  }
+
   return (
     <PDFViewer>
-      <Plain1 />
+      <PdfComponent />
     </PDFViewer>
   );
 }
