@@ -95,6 +95,6 @@ export const s = StyleSheet.create({
   },
   title2xl: {
     fontWeight: 'bold',
-    fontSize: 24,
+    fontSize: 28,
   },
 });

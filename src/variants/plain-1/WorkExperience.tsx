@@ -44,7 +44,7 @@ export default function WorkExperience({
           {/* Position Title */}
           <Text style={[s.titleSm, { marginBottom: 4 }]}>{position.title}</Text>
           {/* Position Date */}
-          <Text style={[{ fontWeight: 'semibold', marginBottom: 2 }]}>{position.date}</Text>
+          <Text style={[{ marginBottom: 2 }]}>{position.date}</Text>
         </View>
 
         <View style={({ gap: 4 })}>
