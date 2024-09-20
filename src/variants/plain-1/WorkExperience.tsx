@@ -1,29 +1,18 @@
 // @ts-ignore
 import React from 'react';
 import { View, Text } from '@react-pdf/renderer';
-import CustomLink from './Link';
+import { workExperience } from '@/data';
 import { Location, Calendar } from '@/icons';
+import CustomLink from './Link';
 import { s } from './styles';
 
-export default function WorkExperience({
-  company,
-  companyUrl,
-  date,
-  location,
-  positions,
-}:
-{
-  company: string
-  companyUrl: string
-  date: string
-  location: string
-  positions: Array<{
-    title: string
-    points: string[]
-    date: string
-  }>
-}) {
-  const renderedPositions = positions.map((position) => {
+// The work experience data supports defining multiple companies with multiple positions
+// However this comp is only designed to render a single company's positions
+
+export default function WorkExperience() {
+  const { digitalGlue } = workExperience;
+
+  const renderedPositions = digitalGlue.positions.default.map((position) => {
     const renderedPoints = position.points.map((point) => (
       <View key={point} style={({ flexDirection: 'row', gap: 4, padding: '0 12px 0 12px' })}>
         <Text>•</Text>
@@ -59,15 +48,15 @@ export default function WorkExperience({
       <View style={({ flexDirection: 'column' })}>
         {/* Company name */}
         <View style={{ marginBottom: 4 }}>
-          <CustomLink text={company} url={companyUrl} style={[s.titleSm]} />
+          <CustomLink text={digitalGlue.name} url={digitalGlue.companyUrl} style={[s.titleSm]} />
         </View>
 
         {/* Company location + date range */}
         <View style={({ gap: 6, flexDirection: 'row' })}>
           <Location height={12} width={12} />
-          <Text style={[{ fontWeight: 'semibold', marginRight: 3 }]}>{location}</Text>
+          <Text style={[{ fontWeight: 'semibold', marginRight: 3 }]}>{digitalGlue.location}</Text>
           <Calendar height={12} width={12} />
-          <Text style={[{ fontWeight: 'semibold' }]}>{date}</Text>
+          <Text style={[{ fontWeight: 'semibold' }]}>{digitalGlue.date}</Text>
         </View>
       </View>
 

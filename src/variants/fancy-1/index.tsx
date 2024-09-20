@@ -17,6 +17,7 @@ import {
   User,
   CircleIcon,
 } from '@/icons';
+import { aboutMe, contactInfo } from '@/data';
 import Contact from './components/Contact';
 import WorkExperience from './components/WorkExperience';
 import LineGraph from './components/LineGraph';
@@ -68,11 +69,7 @@ function PDF() {
               <Text style={{ ...styles.title1 }}>About Me</Text>
             </View>
 
-            <Text style={styles.text}>
-              I am a full-stack developer with a passion for creating beautiful and functional
-              applications. I have experience with a variety of technologies and am always eager to
-              learn more.
-            </Text>
+            <Text style={styles.text}>{aboutMe.default}</Text>
           </View>
 
           {/* Languages */}
@@ -168,11 +165,11 @@ function PDF() {
                 alignItems: 'flex-start',
               })}
             >
-              <Contact text="kyleaupton@gmail.com" icon="envelope" />
-              <Contact text="+1 (704) 906 2378" icon="phone" />
-              <Contact text="Atlanta, GA" icon="location" />
-              <Contact text="in/kyle-upton-dev" icon="linkedIn" link="https://www.linkedin.com/in/kyle-upton-dev" height={13} />
-              <Contact text="kyleupton.dev" icon="globe" link="https://kyleupton.dev" />
+              <Contact text={contactInfo.email} icon="envelope" />
+              <Contact text={contactInfo.phone} icon="phone" />
+              <Contact text={contactInfo.location} icon="location" />
+              <Contact text="in/kyle-upton-dev" icon="linkedIn" link={contactInfo.linkedIn} height={13} />
+              <Contact text={contactInfo.website} icon="globe" link={contactInfo.website} />
             </View>
           </View>
 
@@ -186,45 +183,7 @@ function PDF() {
               </View>
             </View>
 
-            <WorkExperience
-              company="DigitalGlue"
-              companyUrl="https://www.linkedin.com/company/digitalglue/"
-              date="Oct 2018 - Present"
-              location="Atlanta, GA"
-              positions={[
-                {
-                  title: 'Senior Software Developer',
-                  points: [
-                    'Led and supervised a team of 3 junior developers, providing mentorship, conducting code reviews, and establishing coding standards.',
-                    'Directed a company-wide transition from JavaScript to TypeScript, improving code quality and maintainability, which reduced bugs by 25% and increased developer productivity by 20%.',
-                    'Spearheaded the design and implementation of an update pipeline for the company\'s Electron.js desktop application, enabling over-the-air updates for users.',
-                    'Led the refactoring of the product\'s REST API using modern JavaScript practices, reducing page load times by 35% through the elimination of blocking I/O.',
-                  ],
-                  date: 'Feb 2023 - Present',
-                },
-                {
-                  title: 'Software Developer',
-                  points: [
-                    'Designed and implemented new features for the core product, translating project manager requests into practical software solutions.',
-                    'Provided direct support to clients and effectively debugged production issues.',
-                    'Maintained multiple production codebases, ensuring the stability and efficiency of the software.',
-                    'Developed a Python API to programmatically control BlackMagic Design\'s DaVinci Resolve video editing software, showcased in a demo that won the NAB Show Product of the Year 2022.',
-                    'Successfully redesigned the products\'s web stack, eliminating unnecessary middleware layers to improve security, eliminate bugs, and enhance DX.',
-                  ],
-                  date: 'Nov 2021 - Feb 2023',
-                },
-                {
-                  title: 'Intern',
-                  points: [
-                    'Collaborated with both backend and frontend teams to contribute to the development of new features.',
-                    'Conducted thorough testing of new features, ensuring functionality and performance met quality standards before deployment.',
-                    'Created a set of email templates for use in the product\'s notification system, enhancing communication efficiency.',
-                    'Sharpened full-stack web development skills through hands-on experience and continuous learning.',
-                  ],
-                  date: 'Oct 2018 - Nov 2021',
-                },
-              ]}
-            />
+            <WorkExperience />
           </View>
 
           {/* Education */}

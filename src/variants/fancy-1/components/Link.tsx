@@ -1,6 +1,7 @@
 // @ts-ignore
 import React from 'react';
 import { Link as ExtLink, Text, View } from '@react-pdf/renderer';
+import { createUrl } from '@/utils';
 import { External } from '@/icons';
 
 function Link({
@@ -14,9 +15,11 @@ function Link({
   fontSize?: number
   fontWeight?: number
 }) {
+  const urlNormalized = createUrl(url);
+
   return (
     <ExtLink
-      src={url}
+      src={urlNormalized}
       style={{
         flexDirection: 'row',
         alignItems: 'center',
