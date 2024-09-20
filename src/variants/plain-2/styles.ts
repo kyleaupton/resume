@@ -70,7 +70,7 @@ export const s = StyleSheet.create({
   text: {
     // Default text style
     fontSize: 10,
-    lineHeight: 1.32,
+    lineHeight: 1.34,
     fontFamily: 'Open Sans',
   },
   textLg: {
