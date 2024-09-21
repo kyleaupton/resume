@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite --open",
     "checkTypes": "tsc --noEmit",
-    "build": "tsx scripts/build.ts",
+    "build": "tsx scripts/deploy.ts",
     "upload": "node scripts/upload.mjs"
   },
   "dependencies": {
