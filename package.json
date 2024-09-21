@@ -6,8 +6,8 @@
   "scripts": {
     "dev": "vite --open",
     "checkTypes": "tsc --noEmit",
-    "build": "tsx scripts/deploy.ts",
-    "upload": "node scripts/upload.mjs"
+    "build": "tsx scripts/build.ts",
+    "deploy": "tsx scripts/build.ts --deploy"
   },
   "dependencies": {
     "@react-pdf/renderer": "^3.1.13",
