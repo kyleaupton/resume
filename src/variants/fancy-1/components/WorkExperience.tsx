@@ -3,7 +3,7 @@ import React from 'react';
 import { View, Text } from '@react-pdf/renderer';
 import { workExperience } from '@/data';
 import { Location, Calendar } from '@/icons';
-import CustomLink from './Link';
+import CustomLink from '@/components/Link';
 import { styles } from '../styles';
 
 export default function WorkExperience() {
@@ -46,10 +46,9 @@ export default function WorkExperience() {
         {/* Company name */}
         <View style={{ marginBottom: 4 }}>
           <CustomLink
-            text={digitalGlue.name}
-            fontSize={16}
-            fontWeight={9000}
             url={digitalGlue.companyUrl}
+            text={digitalGlue.name}
+            textStyle={{ fontSize: 16, fontWeight: 9000 }}
           />
         </View>
 

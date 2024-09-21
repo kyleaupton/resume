@@ -3,7 +3,7 @@ import React from 'react';
 import { View, Text } from '@react-pdf/renderer';
 import { workExperience } from '@/data';
 import { Location, Calendar } from '@/icons';
-import CustomLink from './Link';
+import CustomLink from '@/components/Link';
 import { s } from './styles';
 
 // The work experience data supports defining multiple companies with multiple positions
@@ -47,8 +47,14 @@ export default function WorkExperience() {
     <View style={({ flexDirection: 'column', gap: 8 })}>
       <View style={({ flexDirection: 'column' })}>
         {/* Company name */}
-        <View style={{ marginBottom: 4 }}>
-          <CustomLink text={digitalGlue.name} url={digitalGlue.companyUrl} style={[s.titleSm]} />
+        <View style={{ marginBottom: 4, flexDirection: 'row' }}>
+          <CustomLink
+            text={digitalGlue.name}
+            url={digitalGlue.companyUrl}
+            textStyle={[s.titleSm]}
+          />
+          {/* Dummy view to take up the rest of the row space */}
+          <View style={{ flexGrow: 1 }} />
         </View>
 
         {/* Company location + date range */}

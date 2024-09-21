@@ -8,7 +8,7 @@ import {
   Location,
   Phone,
 } from '@/icons';
-import CustomLink from './Link';
+import CustomLink from '@/components/Link';
 import { styles } from '../styles';
 
 const icons: Record<string, FunctionComponent> = {

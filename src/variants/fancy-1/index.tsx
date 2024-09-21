@@ -18,11 +18,11 @@ import {
   CircleIcon,
 } from '@/icons';
 import { aboutMe, contactInfo } from '@/data';
+import CustomLink from '@/components/Link';
 import Contact from './components/Contact';
 import WorkExperience from './components/WorkExperience';
 import LineGraph from './components/LineGraph';
 import Divider from './components/Divider';
-import CustomLink from './components/Link';
 import { styles, colors } from './styles';
 
 const s = StyleSheet.create({
@@ -122,12 +122,12 @@ function PDF() {
             </View>
 
             <View style={{ gap: '6px' }}>
-              <CustomLink text="Bucket Browser" url="https://github.com/kyleaupton/bucket-browser" fontSize={12} fontWeight={600} />
-              <CustomLink text="Boot Builder" url="https://github.com/kyleaupton/boot-builder" fontSize={12} fontWeight={600} />
-              <CustomLink text="Typed Electron IPC" url="https://github.com/kyleaupton/typed-electron-ipc" fontSize={12} fontWeight={600} />
-              <CustomLink text="Glob Copy" url="https://github.com/kyleaupton/glob-copy" fontSize={12} fontWeight={600} />
-              <CustomLink text="Node Rsync" url="https://github.com/kyleaupton/node-rsync" fontSize={12} fontWeight={600} />
-              <CustomLink text="Portfolio" url="https://github.com/kyleaupton/portfolio" fontSize={12} fontWeight={600} />
+              <CustomLink text="Bucket Browser" url="https://github.com/kyleaupton/bucket-browser" textStyle={{ fontSize: 16, fontWeight: 600 }} />
+              <CustomLink text="Boot Builder" url="https://github.com/kyleaupton/boot-builder" textStyle={{ fontSize: 16, fontWeight: 600 }} />
+              <CustomLink text="Typed Electron IPC" url="https://github.com/kyleaupton/typed-electron-ipc" textStyle={{ fontSize: 16, fontWeight: 600 }} />
+              <CustomLink text="Glob Copy" url="https://github.com/kyleaupton/glob-copy" textStyle={{ fontSize: 16, fontWeight: 600 }} />
+              <CustomLink text="Node Rsync" url="https://github.com/kyleaupton/node-rsync" textStyle={{ fontSize: 16, fontWeight: 600 }} />
+              <CustomLink text="Portfolio" url="https://github.com/kyleaupton/portfolio" textStyle={{ fontSize: 16, fontWeight: 600 }} />
             </View>
           </View>
         </View>
@@ -157,8 +157,8 @@ function PDF() {
             {/* Contact */}
             <View
               style={({
-              // padding: '8px 0',
-              // margin: '0 -12px',
+                // padding: '8px 0',
+                // margin: '0 -12px',
                 flexDirection: 'column',
                 gap: 8,
                 // width: '100%',

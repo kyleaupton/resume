@@ -8,6 +8,7 @@ import {
   StyleSheet,
 } from '@react-pdf/renderer';
 import { aboutMe, contactInfo } from '@/data';
+import CustomLink from '@/components/Link';
 import Separator from './Separator';
 import WorkExperience from './WorkExperience';
 import registerFonts from './fonts';
@@ -42,8 +43,8 @@ export default function PDF() {
           >
             <Text>{contactInfo.phone}</Text>
             <Text>{contactInfo.email}</Text>
-            <Text>{contactInfo.linkedIn}</Text>
-            <Text>{contactInfo.website}</Text>
+            <CustomLink url={contactInfo.linkedIn} showIcon={false} />
+            <CustomLink url={contactInfo.website} showIcon={false} />
           </View>
         </View>
 
