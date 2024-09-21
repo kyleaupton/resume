@@ -2,13 +2,13 @@ import fs from 'fs/promises';
 import path from 'path';
 import url from 'url';
 import { renderToFile } from '@react-pdf/renderer';
-import PDF from '../src/variants/fancy-1/pdf';
+import PDF from '../src/variants/plain-1';
 
 const doRender = async () => {
   const dist = path.resolve(path.dirname(url.fileURLToPath(import.meta.url)), '..', 'dist');
   // const dist = path.resolve(__dirname, '..', 'dist');
   await fs.mkdir(dist, { recursive: true });
-  await renderToFile(PDF, path.join(dist, 'out.pdf'));
+  await renderToFile(PDF(), path.join(dist, 'out.pdf'));
 };
 
 doRender()
