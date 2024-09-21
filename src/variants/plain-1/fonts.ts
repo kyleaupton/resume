@@ -5,19 +5,19 @@ const registerFont = () => {
     family: 'Poppins',
     fonts: [
       {
-        src: 'src/variants/plain-1/poppins/Poppins-Regular.ttf',
+        src: 'src/fonts/poppins/Poppins-Regular.ttf',
         fontWeight: 'normal',
       },
       {
-        src: 'src/variants/plain-1/poppins/Poppins-Thin.ttf',
+        src: 'src/fonts/poppins/Poppins-Thin.ttf',
         fontWeight: 'thin',
       },
       {
-        src: 'src/variants/plain-1/poppins/Poppins-SemiBold.ttf',
+        src: 'src/fonts/poppins/Poppins-SemiBold.ttf',
         fontWeight: 'semibold',
       },
       {
-        src: 'src/variants/plain-1/poppins/Poppins-Bold.ttf',
+        src: 'src/fonts/poppins/Poppins-Bold.ttf',
         fontWeight: 'bold',
       },
     ],
