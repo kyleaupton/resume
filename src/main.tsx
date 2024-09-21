@@ -40,3 +40,9 @@ document.body.appendChild(MOUNT_ELEMENT);
 const root = createRoot(MOUNT_ELEMENT);
 
 root.render(<DocumentWrapper />);
+
+// This is a hack to make the PDF update on "HMR"
+// Full page reload is not ideal, but it's quick so who cares
+if (import.meta.hot) {
+  import.meta.hot.on('vite:afterUpdate', () => window.location.reload());
+}
