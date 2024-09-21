@@ -20,10 +20,10 @@ yarn install
 yarn dev
 ```
 
-## Deploy PDFs
+## Deploy PDFs Manually
 
 ```bash
-yarn build --deploy
+yarn deploy
 ```
 
 ## Build PDFs
