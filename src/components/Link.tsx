@@ -1,35 +1,67 @@
 // @ts-ignore
 import React from 'react';
 import { Link as ExtLink, Text, View } from '@react-pdf/renderer';
-import { External } from './Icons';
+/* eslint-disable-next-line */
+import { Style } from '@react-pdf/types';
+import { createUrl } from '@/utils';
+import { External } from '@/icons';
 
-export default function Link({
-  text,
+interface IconStyle {
+  color: string;
+  height: number;
+  width: number;
+}
+
+function Link({
   url,
-  fontSize = 11,
-  fontWeight = 600,
+  text,
+  textStyle,
+  iconStyle,
+  showIcon,
 }: {
-  text: string,
   url: string,
-  fontSize?: number
-  fontWeight?: number
+  text?: string,
+  textStyle?: Style | Style[],
+  iconStyle?: IconStyle,
+  showIcon?: boolean,
 }) {
+  const displayText = text || url;
+  const urlNormalized = createUrl(url);
+
   return (
     <ExtLink
-      src={url}
+      src={urlNormalized}
       style={{
         flexDirection: 'row',
         alignItems: 'center',
         gap: '6px',
-        fontSize: '14px',
         color: 'black',
         textDecoration: 'none',
       }}
     >
-      <Text style={{ fontSize, fontWeight }}>{text}</Text>
+      <Text style={textStyle}>{displayText}</Text>
+      {showIcon && (
       <View style={{ marginTop: 2 }}>
-        <External height={10} width={10} />
+        <External
+          height={iconStyle?.height}
+          width={iconStyle?.width}
+          color={iconStyle?.color}
+        />
       </View>
+      )}
     </ExtLink>
   );
 }
+
+Link.defaultProps = {
+  text: undefined,
+  textStyle: {},
+  iconStyle: {
+    color: 'black',
+    height: 10,
+    width: 10,
+  },
+  showIcon: true,
+};
+
+export default Link;

@@ -27,6 +27,7 @@ module.exports = {
     project: './tsconfig.json',
   },
   rules: {
+    'import/extensions': 0,
     '@typescript-eslint/explicit-function-return-type': 0,
     '@typescript-eslint/strict-boolean-expressions': 0,
     '@typescript-eslint/ban-ts-comment': 0,
