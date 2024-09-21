@@ -94,7 +94,7 @@ export default function PDF() {
           <View>
             <Text style={[{ fontWeight: 'semibold' }]}>Kennesaw State University</Text>
             <Text style={[s.titleSm]}>B.S. Computer Science</Text>
-            <Text style={[{ marginTop: 4, marginLeft: 12 }]}>• Completed 60/120 credit hours</Text>
+            <Text style={[{ marginTop: 4, marginLeft: 12 }]}>• Completed 66/120 credit hours</Text>
           </View>
         </View>
       </Page>
