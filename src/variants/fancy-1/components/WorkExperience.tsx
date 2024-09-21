@@ -4,7 +4,7 @@ import { View, Text } from '@react-pdf/renderer';
 import { workExperience } from '@/data';
 import { Location, Calendar } from '@/icons';
 import CustomLink from '@/components/Link';
-import { styles } from '../styles';
+import { styles, s } from '../styles';
 
 export default function WorkExperience() {
   const { digitalGlue } = workExperience;
@@ -28,9 +28,9 @@ export default function WorkExperience() {
           })}
         >
           {/* Position Title */}
-          <Text style={({ ...styles.title2, marginBottom: 4 })}>{position.title}</Text>
+          <Text style={[s.titleSm, { marginBottom: 4 }]}>{position.title}</Text>
           {/* Position Date */}
-          <Text style={({ ...styles.title3, marginBottom: 2 })}>{position.date}</Text>
+          <Text style={[{ marginBottom: 2 }]}>{position.date}</Text>
         </View>
 
         <View style={({ gap: 4 })}>
@@ -41,23 +41,25 @@ export default function WorkExperience() {
   });
 
   return (
-    <View style={({ flexDirection: 'column', gap: 10 })}>
+    <View style={({ flexDirection: 'column', gap: 8 })}>
       <View style={({ flexDirection: 'column' })}>
         {/* Company name */}
-        <View style={{ marginBottom: 4 }}>
+        <View style={{ marginBottom: 4, flexDirection: 'row' }}>
           <CustomLink
-            url={digitalGlue.companyUrl}
             text={digitalGlue.name}
-            textStyle={{ fontSize: 16, fontWeight: 9000 }}
+            url={digitalGlue.companyUrl}
+            textStyle={[s.titleSm]}
           />
+          {/* Dummy view to take up the rest of the row space */}
+          <View style={{ flexGrow: 1 }} />
         </View>
 
         {/* Company location + date range */}
         <View style={({ gap: 6, flexDirection: 'row' })}>
           <Location height={12} width={12} />
-          <Text style={({ ...styles.title3, marginRight: 3 })}>{digitalGlue.location}</Text>
+          <Text style={[{ fontWeight: 'semibold', marginRight: 3 }]}>{digitalGlue.location}</Text>
           <Calendar height={12} width={12} />
-          <Text style={({ ...styles.title3 })}>{digitalGlue.date}</Text>
+          <Text style={({ fontWeight: 'semibold' })}>{digitalGlue.date}</Text>
         </View>
       </View>
 

@@ -5,37 +5,22 @@ import {
   Text,
   View,
   Document,
-  Image,
   StyleSheet,
 } from '@react-pdf/renderer';
-import {
-  Book,
-  Briefecase,
-  Code2,
-  Gear,
-  Hammer,
-  User,
-  CircleIcon,
-} from '@/icons';
 import { aboutMe, contactInfo } from '@/data';
 import CustomLink from '@/components/Link';
-import Contact from './components/Contact';
+import registerFont from './fonts';
 import WorkExperience from './components/WorkExperience';
 import LineGraph from './components/LineGraph';
 import Divider from './components/Divider';
-import { styles, colors } from './styles';
+import { styles, colors, s } from './styles';
 
-const s = StyleSheet.create({
+registerFont();
+
+const { leftSectionItem } = StyleSheet.create({
   leftSectionItem: {
     gap: '18px',
     width: '100%',
-  },
-  leftSectionTitle: {
-    position: 'relative',
-    gap: '12px',
-    width: '100%',
-    alignItems: 'center',
-    justifyContent: 'center',
   },
 });
 
@@ -43,43 +28,26 @@ const s = StyleSheet.create({
 function PDF() {
   return (
     <Document title="Kyle Upton's Resume" author="Kyle Upton" keywords="Version: 0.1">
-      <Page size="A4" style={{ flexDirection: 'row' }}>
+      <Page size="A4" style={[s.text, { flexDirection: 'row' }]}>
         {/* Left column */}
         <View
           style={{
             alignItems: 'center',
-            // justifyContent: 'center',
             gap: '28px',
             flexBasis: '35%',
             backgroundColor: colors.background,
             padding: '28px 18px 18px 18px',
           }}
         >
-          {/* Profile photo */}
-          <View>
-            <Image src="public/attempt-2-min.png" style={{ height: '100px', width: 'auto' }} />
-          </View>
-
           {/* About me */}
-          <View style={s.leftSectionItem}>
-            <View style={s.leftSectionTitle}>
-              <View style={{ position: 'absolute', left: 0 }}>
-                <CircleIcon icon={<User color="white" />} />
-              </View>
-              <Text style={{ ...styles.title1 }}>About Me</Text>
-            </View>
-
-            <Text style={styles.text}>{aboutMe.default}</Text>
+          <View style={leftSectionItem}>
+            <Text style={[s.titleMd, { textAlign: 'center' }]}>About Me</Text>
+            <Text>{aboutMe.default}</Text>
           </View>
 
           {/* Languages */}
-          <View style={s.leftSectionItem}>
-            <View style={s.leftSectionTitle}>
-              <View style={{ position: 'absolute', left: 0 }}>
-                <CircleIcon icon={<Code2 color="white" height={14} width={14} />} />
-              </View>
-              <Text style={styles.title1}>Languages</Text>
-            </View>
+          <View style={leftSectionItem}>
+            <Text style={[s.titleMd, { textAlign: 'center' }]}>Languages</Text>
 
             <View style={{ gap: '6px' }}>
               <LineGraph label="JavaScript" percentage={100} />
@@ -93,13 +61,8 @@ function PDF() {
           </View>
 
           {/* Technologies */}
-          <View style={s.leftSectionItem}>
-            <View style={s.leftSectionTitle}>
-              <View style={{ position: 'absolute', left: 0 }}>
-                <CircleIcon icon={<Gear color="white" height={14} width={14} />} />
-              </View>
-              <Text style={styles.title1}>Technologies</Text>
-            </View>
+          <View style={leftSectionItem}>
+            <Text style={[s.titleMd, { textAlign: 'center' }]}>Technologies</Text>
 
             <View style={{ gap: '6px' }}>
               <LineGraph label="Node.js" percentage={100} />
@@ -113,21 +76,16 @@ function PDF() {
           </View>
 
           {/* Projects */}
-          <View style={s.leftSectionItem}>
-            <View style={s.leftSectionTitle}>
-              <View style={{ position: 'absolute', left: 0 }}>
-                <CircleIcon icon={<Hammer color="white" height={14} width={14} />} />
-              </View>
-              <Text style={styles.title1}>Projects</Text>
-            </View>
+          <View style={leftSectionItem}>
+            <Text style={[s.titleMd, { textAlign: 'center' }]}>Projects</Text>
 
             <View style={{ gap: '6px' }}>
-              <CustomLink text="Bucket Browser" url="https://github.com/kyleaupton/bucket-browser" textStyle={{ fontSize: 16, fontWeight: 600 }} />
-              <CustomLink text="Boot Builder" url="https://github.com/kyleaupton/boot-builder" textStyle={{ fontSize: 16, fontWeight: 600 }} />
-              <CustomLink text="Typed Electron IPC" url="https://github.com/kyleaupton/typed-electron-ipc" textStyle={{ fontSize: 16, fontWeight: 600 }} />
-              <CustomLink text="Glob Copy" url="https://github.com/kyleaupton/glob-copy" textStyle={{ fontSize: 16, fontWeight: 600 }} />
-              <CustomLink text="Node Rsync" url="https://github.com/kyleaupton/node-rsync" textStyle={{ fontSize: 16, fontWeight: 600 }} />
-              <CustomLink text="Portfolio" url="https://github.com/kyleaupton/portfolio" textStyle={{ fontSize: 16, fontWeight: 600 }} />
+              <CustomLink text="Bucket Browser" url="https://github.com/kyleaupton/bucket-browser" textStyle={[s.textLg, { fontWeight: 'semibold' }]} />
+              <CustomLink text="Boot Builder" url="https://github.com/kyleaupton/boot-builder" textStyle={[s.textLg, { fontWeight: 'semibold' }]} />
+              <CustomLink text="Typed Electron IPC" url="https://github.com/kyleaupton/typed-electron-ipc" textStyle={[s.textLg, { fontWeight: 'semibold' }]} />
+              <CustomLink text="Glob Copy" url="https://github.com/kyleaupton/glob-copy" textStyle={[s.textLg, { fontWeight: 'semibold' }]} />
+              <CustomLink text="Node Rsync" url="https://github.com/kyleaupton/node-rsync" textStyle={[s.textLg, { fontWeight: 'semibold' }]} />
+              <CustomLink text="Portfolio" url="https://github.com/kyleaupton/portfolio" textStyle={[s.textLg, { fontWeight: 'semibold' }]} />
             </View>
           </View>
         </View>
@@ -150,51 +108,30 @@ function PDF() {
             }}
           >
             <View style={{ flexGrow: 1 }}>
-              <Text style={styles.titleBrand}>Kyle Upton</Text>
-              <Text style={styles.extraTextLarge}>Senior Software Developer</Text>
+              <Text style={[s.title2xl]}>Kyle Upton</Text>
+              <Text style={[s.textLg, s.textMuted, { fontWeight: 'semibold' }]}>Senior Software Developer</Text>
             </View>
 
             {/* Contact */}
-            <View
-              style={({
-                // padding: '8px 0',
-                // margin: '0 -12px',
-                flexDirection: 'column',
-                gap: 8,
-                // width: '100%',
-                alignItems: 'flex-start',
-              })}
-            >
-              <Contact text={contactInfo.email} icon="envelope" />
-              <Contact text={contactInfo.phone} icon="phone" />
-              <Contact text={contactInfo.location} icon="location" />
-              <Contact text="in/kyle-upton-dev" icon="linkedIn" link={contactInfo.linkedIn} height={13} />
-              <Contact text={contactInfo.website} icon="globe" link={contactInfo.website} />
+            <View style={[{ lineHeight: 1.5 }]}>
+              <Text>{contactInfo.phone}</Text>
+              <Text>{contactInfo.email}</Text>
+              <CustomLink url={contactInfo.linkedIn} showIcon={false} />
+              <CustomLink url={contactInfo.website} showIcon={false} />
             </View>
           </View>
 
           {/* Work Experience */}
-          <View style={{ gap: '6px', marginTop: '-16px' }}>
-            <View style={{ flexDirection: 'row', alignItems: 'center', gap: '18px' }}>
-              <CircleIcon width={28} height={28} icon={<Briefecase color="white" height={16} width={16} />} />
-              <View style={{ flexGrow: 1 }}>
-                <Text style={styles.title1}>Work Experience</Text>
-                <Divider />
-              </View>
-            </View>
-
+          <View style={{ gap: 4, marginTop: -4 }}>
+            <Text style={[s.titleLg]}>Work Experience</Text>
+            <Divider style={{ marginBottom: 2 }} />
             <WorkExperience />
           </View>
 
           {/* Education */}
-          <View style={{ gap: '6px' }}>
-            <View style={{ flexDirection: 'row', alignItems: 'center', gap: '18px' }}>
-              <CircleIcon width={28} height={28} icon={<Book color="white" height={16} width={16} />} />
-              <View style={{ flexGrow: 1 }}>
-                <Text style={styles.title1}>Education</Text>
-                <Divider />
-              </View>
-            </View>
+          <View style={{ gap: 4 }}>
+            <Text style={styles.title1}>Education</Text>
+            <Divider style={{ marginBottom: 2 }} />
 
             <View style={{ flexDirection: 'column' }}>
               <Text style={styles.title2}>BS Computer Science</Text>

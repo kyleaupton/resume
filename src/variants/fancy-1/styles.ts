@@ -61,3 +61,40 @@ export const styles = StyleSheet.create({
     margin: 2,
   },
 });
+
+export const s = StyleSheet.create({
+  // Text
+  textSm: {
+    fontSize: 9,
+  },
+  text: {
+    // Default text style
+    fontSize: 10,
+    lineHeight: 1.2,
+    fontFamily: 'Open Sans',
+  },
+  textLg: {
+    fontSize: 12,
+  },
+  textMuted: {
+    color: colors.text2,
+  },
+
+  // Titles
+  titleSm: {
+    fontWeight: 'bold',
+    fontSize: 12,
+  },
+  titleMd: {
+    fontWeight: 'bold',
+    fontSize: 14,
+  },
+  titleLg: {
+    fontWeight: 'bold',
+    fontSize: 16,
+  },
+  title2xl: {
+    fontWeight: 'bold',
+    fontSize: 28,
+  },
+});

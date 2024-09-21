@@ -1,9 +1,18 @@
 // @ts-ignore
 import React from 'react';
 import { View } from '@react-pdf/renderer';
+/* eslint-disable-next-line */
+import { Style } from '@react-pdf/types';
 
-export default function Divider() {
+function Divider({ style = {} }: { style?: Style }) {
+  console.log(style);
   return (
-    <View style={({ height: 1, backgroundColor: 'grey', margin: '4px 0 8px 0' })} />
+    <View style={[style, { height: 1, backgroundColor: '#bbb' }]} />
   );
 }
+
+Divider.defaultProps = {
+  style: {},
+};
+
+export default Divider;
