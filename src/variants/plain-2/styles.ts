@@ -8,60 +8,6 @@ export const colors = {
   background2: '#c4c4c4',
 };
 
-// Create styles
-export const styles = StyleSheet.create({
-  page: {
-    flexDirection: 'column',
-    backgroundColor: '#E4E4E4',
-    color: colors.text1,
-    padding: 10,
-  },
-  section: {
-    // margin: 10,
-    padding: 8,
-    // gap: 8
-  },
-  titleBrand: {
-    fontSize: 18,
-    color: colors.brand,
-    fontWeight: 'extrabold',
-  },
-  title1: {
-    fontSize: 16,
-    fontWeight: 9000,
-  },
-  title2: {
-    fontSize: 13,
-    fontWeight: 'thin',
-  },
-  title3: {
-    fontSize: 11,
-    fontWeight: 'bold',
-  },
-  text: {
-    fontSize: 11,
-    lineHeight: 1.2,
-  },
-  extraTextLarge: {
-    fontSize: 14,
-    color: colors.text2,
-    marginBottom: 4,
-  },
-  extraTextSmall: {
-    fontSize: 10,
-    color: colors.text2,
-  },
-  divider: {
-    height: 2,
-    backgroundColor: colors.text1,
-  },
-  languageIcon: {
-    width: 16,
-    height: 16,
-    margin: 2,
-  },
-});
-
 export const s = StyleSheet.create({
   // Text
   textSm: {
