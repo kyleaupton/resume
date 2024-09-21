@@ -5,7 +5,6 @@ import { View } from '@react-pdf/renderer';
 import { Style } from '@react-pdf/types';
 
 function Divider({ style = {} }: { style?: Style }) {
-  console.log(style);
   return (
     <View style={[style, { height: 1, backgroundColor: '#bbb' }]} />
   );

@@ -29,7 +29,7 @@ const workExperience = (<T extends WorkExperience>(payload: NoInfer<T>) => paylo
         {
           title: 'Senior Software Developer',
           points: [
-            'Led and supervised a team of 3 junior developers, providing mentorship, conducting code reviews, and establishing coding standards.',
+            'Led and supervised a team of three developers, providing mentorship, conducting code reviews, and establishing coding standards.',
             'Directed a company-wide transition from JavaScript to TypeScript, improving code quality and maintainability, which reduced bugs by 25% and increased developer productivity by 20%.',
             'Spearheaded the design and implementation of an update pipeline for the company\'s Electron.js desktop application, enabling over-the-air updates for users.',
             'Led the refactoring of the product\'s REST API using modern JavaScript practices, reducing page load times by 35% through the elimination of blocking I/O.',
@@ -39,7 +39,7 @@ const workExperience = (<T extends WorkExperience>(payload: NoInfer<T>) => paylo
         {
           title: 'Software Developer',
           points: [
-            'Designed and implemented new features for the core product, translating project manager requests into practical software solutions.',
+            'Designed and implemented new features for the core product, translating project management requests into practical software solutions.',
             'Provided direct support to clients and effectively debugged production issues.',
             'Maintained multiple production codebases, ensuring the stability and efficiency of the software.',
             'Developed a Python API to programmatically control BlackMagic Design\'s DaVinci Resolve video editing software, showcased in a demo that won the NAB Show Product of the Year 2022.',
