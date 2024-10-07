@@ -9,6 +9,7 @@ import {
 } from '@react-pdf/renderer';
 import { aboutMe, contactInfo } from '@/data';
 import CustomLink from '@/components/Link';
+import { Calendar } from '@/icons';
 import Separator from './Separator';
 import WorkExperience from './WorkExperience';
 import registerFonts from './fonts';
@@ -81,9 +82,12 @@ export default function PDF() {
             <Text>Vue</Text>
             <Text>Electron</Text>
             <Text>Tailwind</Text>
+            <Text>React</Text>
             <Text>Nuxt</Text>
             <Text>Docker</Text>
-            <Text>React</Text>
+            <Text>Linux</Text>
+            <Text>git</Text>
+            <Text>GitHub Actions</Text>
           </View>
         </View>
 
@@ -94,7 +98,10 @@ export default function PDF() {
           <View>
             <Text style={[{ fontWeight: 'semibold' }]}>Kennesaw State University</Text>
             <Text style={[s.titleSm]}>B.S. Computer Science</Text>
-            <Text style={[{ marginTop: 4, marginLeft: 12 }]}>• Completed 66/120 credit hours</Text>
+            <View style={[{ flexDirection: 'row', gap: 6, marginTop: 4 }]}>
+              <Calendar height={12} width={12} />
+              <Text style={[{ fontWeight: 'semibold' }]}>2018 - 2021</Text>
+            </View>
           </View>
         </View>
       </Page>
