@@ -80,14 +80,16 @@ export default function PDF() {
             <Text style={[{ fontWeight: 'semibold' }]}>Technologies:</Text>
             <Text>Node.js</Text>
             <Text>Vue</Text>
-            <Text>Electron</Text>
+            <Text>Nuxt</Text>
             <Text>Tailwind</Text>
             <Text>React</Text>
-            <Text>Nuxt</Text>
             <Text>Docker</Text>
+            <Text>Vercel</Text>
             <Text>Linux</Text>
             <Text>git</Text>
-            <Text>GitHub Actions</Text>
+            <Text>PostgreSQL</Text>
+            <Text>DevOps</Text>
+            <Text>shadcn</Text>
           </View>
         </View>
 
