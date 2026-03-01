@@ -5,6 +5,7 @@ import { PDFViewer } from '@react-pdf/renderer';
 import Fancy1 from './variants/fancy-1';
 import Plain1 from './variants/plain-1';
 import Plain2 from './variants/plain-2';
+import New1 from './variants/new-1';
 import './main.css';
 
 function DocumentWrapper() {
@@ -19,6 +20,9 @@ function DocumentWrapper() {
       break;
     case '/plain-2':
       PdfComponent = Plain2;
+      break;
+    case '/new-1':
+      PdfComponent = New1;
       break;
     default:
       PdfComponent = Plain1;
