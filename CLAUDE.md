@@ -9,12 +9,15 @@ PDF resume generator built with React and `@react-pdf/renderer`. Renders resume 
 ## Commands
 
 ```bash
-yarn install           # Install dependencies
-yarn dev               # Start Vite dev server (opens browser, PDF preview via PDFViewer)
-yarn checkTypes        # TypeScript type checking (tsc --noEmit)
-yarn build             # Generate PDF files locally to dist/
-yarn deploy            # Build PDFs + upload to S3
+npm ci                 # Install exact dependencies from package-lock.json
+npm run dev            # Start Vite dev server (opens browser, PDF preview via PDFViewer)
+npm run checkTypes     # TypeScript type checking (tsc --noEmit)
+npm run build          # Generate PDF files locally to dist/ (no AWS credentials needed)
+npm run deploy         # Build PDFs + upload to S3 (requires AWS credentials)
 ```
+
+Use npm only. When changing dependencies, use `npm install` and commit the updated
+`package-lock.json`.
 
 Dev server routes for viewing variants: `/`, `/plain-1`, `/plain-2`, `/fancy-1`
 

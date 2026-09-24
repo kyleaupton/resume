@@ -15,21 +15,33 @@ The project is set up with a continuous deployment pipeline. Upon every commit t
 To set up the development server, execute the following commands:
 
 ```bash
-yarn install
+npm ci
 
-yarn dev
+npm run dev
 ```
+
+Use npm for dependency management. `npm ci` installs the exact versions in
+`package-lock.json`; use `npm install` when adding or updating dependencies and
+commit the updated lockfile.
+
+Run `npm run checkTypes` to check TypeScript before building.
 
 ## Deploy PDFs Manually
 
 ```bash
-yarn deploy
+npm run deploy
 ```
+
+Deployment requires `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY` in the
+environment or a local `.env` file.
 
 ## Build PDFs
 
 Sometimes it is helpful to build the PDFs and not deploy them. You can do that with the following:
 
 ```bash
-yarn build
+npm run build
 ```
+
+This generates each resume variant in `dist/` without uploading anything or
+requiring AWS credentials.

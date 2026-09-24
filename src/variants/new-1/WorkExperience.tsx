@@ -4,7 +4,7 @@ import { View, Text } from '@react-pdf/renderer';
 import workExperience from '@/data/work-experience';
 import type { Company } from '@/data/work-experience';
 import CustomLink from '@/components/Link';
-import { s, colors } from './styles';
+import { s } from './styles';
 
 function CompanySection({ company }: { company: Company }) {
   const renderedPositions = company.positions.default.map((position) => {

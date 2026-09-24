@@ -8,6 +8,7 @@ import {
   StyleSheet,
 } from '@react-pdf/renderer';
 import { aboutMe, contactInfo } from '@/data';
+import { Calendar } from '@/icons';
 import CustomLink from '@/components/Link';
 import WorkExperience from './WorkExperience';
 import registerFonts from './fonts';
@@ -84,8 +85,13 @@ export default function PDF() {
           <Text style={s.titleLg}>Education</Text>
           <View>
             <Text style={[{ fontWeight: 'semibold' }]}>Kennesaw State University</Text>
+
             <Text style={[s.titleSm]}>B.S. Computer Science</Text>
-            <Text style={[{ marginTop: 4, marginLeft: 12 }]}>• Completed 66/120 credit hours</Text>
+
+            <View style={[{ flexDirection: 'row', gap: 6, marginTop: 4 }]}>
+              <Calendar height={12} width={12} />
+              <Text style={[{ fontWeight: 'semibold' }]}>2018 - 2021</Text>
+            </View>
           </View>
         </View>
       </Page>
