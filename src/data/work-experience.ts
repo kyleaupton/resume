@@ -27,12 +27,14 @@ const workExperience = (<T extends WorkExperience>(payload: NoInfer<T>) => paylo
         {
           title: 'Senior Software Engineer',
           points: [
-            'Built a full-stack CRM platform from the ground up for the solar industry, designed to replace Salesforce for verticals with complex lead-to-install workflows (Go, Vue, PostgreSQL).',
-            'Designed and implemented an AI-powered project summary system with content-hash-based cache invalidation and a provider-agnostic client that supports multiple LLM backends.',
-            'Built a production notification system processing thousands of messages daily across email, SMS, web push, and in-app channels, with a Go routine worker queue, exponential backoff retry, and permanent failure handling.',
-            'Solved critical data integrity issues by implementing optimistic locking with a three-way merge algorithm, then extended it with real-time collaboration via SSE—live form updates and presence detection, backed by pg_notify for Kubernetes compatibility.',
-            'Integrated Cloudtalk for in-app SMS and phone calls, building a webhook ingestion pipeline with background worker processing for reliable message delivery.',
-            'Shipped the web client as a PWA with service worker update detection and web push notifications for a native-like mobile experience.',
+            'Core engineer on a configurable, multi-tenant CRM that replaces Salesforce for home-services companies with long lead-to-install workflows (Go, Vue 3, PostgreSQL, Kubernetes, ~2k users).',
+            'Built and shipped Wilbur, the CRM\'s production AI assistant, with a provider-agnostic Go agent loop (Claude today), tenant-scoped tools that query and aggregate CRM data, and a streaming Vue chat UI.',
+            'Designed a partner API that defines each of its ~20 operations once and generates a single JSON Schema for both MCP tools and the REST/OpenAPI surface, with scoped auth, audit logging, and 160 tests.',
+            'Created reusable, config-driven UI, including a schema-driven form engine and a data table used in 40+ views.',
+            'Took over a stalled Vue 2 and Vuetify migration, moved it to Vue 3 and shadcn-vue in one pass, and wrote an AI agent playbook the team used to convert the 216-component core app in about two months.',
+            'Stopped silent data loss on shared field forms with optimistic locking and a three-way merge, then added live presence over SSE, synced across Kubernetes pods with Postgres LISTEN/NOTIFY.',
+            'Shipped a notification pipeline that sends about 3,000 messages a day across email, push, and in-app.',
+            'Set up GitHub Actions CI that runs unit and Testcontainers integration tests on every pull request.',
           ],
           date: 'Feb 2025 - Present',
         },
@@ -49,25 +51,25 @@ const workExperience = (<T extends WorkExperience>(payload: NoInfer<T>) => paylo
         {
           title: 'Senior Software Developer',
           points: [
-            'Led and supervised a team of three developers, providing mentorship, conducting code reviews, and establishing coding standards.',
-            'Directed a company-wide transition from JavaScript to TypeScript, reducing bugs by 25% and increasing developer productivity by 20%.',
-            'Spearheaded the design and implementation of an update pipeline for the company\'s Electron.js desktop application, enabling over-the-air updates for users.',
+            'Led the Vue 3 and Vite migration of the main web app, converting it on a parallel branch while three junior engineers kept shipping features, and landed it in a single release.',
+            'Built support for any customer Active Directory or LDAP server, with schema mapping, scaled to 10,000+ users.',
+            'Mentored three developers through code reviews and coding standards, led TypeScript adoption across frontend and backend, introduced Vitest, and owned the GitHub Actions CI/CD pipelines.',
           ],
           date: 'Feb 2023 - Feb 2025',
         },
         {
           title: 'Software Developer',
           points: [
-            'Developed a Python API to programmatically control BlackMagic Design\'s DaVinci Resolve video editing software, showcased in a demo that won the NAB Show Product of the Year 2022.',
-            'Redesigned the product\'s web stack, eliminating unnecessary middleware layers to improve security, eliminate bugs, and enhance DX.',
-            'Led the refactoring of the product\'s REST API using modern JavaScript practices, reducing page load times by 35% through the elimination of blocking I/O.',
+            'Built a shared Vue and Tailwind component library used by both the web and Electron apps.',
+            'Developed a Python API to control DaVinci Resolve for a demo that won NAB Show Product of the Year 2022.',
+            'Improved rendering performance for directories with thousands of files using pagination and virtual scrolling.',
           ],
           date: 'Nov 2021 - Feb 2023',
         },
         {
           title: 'Intern',
           points: [
-            'Contributed to full-stack feature development across backend and frontend teams, progressing from testing and email templates to shipping production features.',
+            'Progressed from testing and small UI features to shipping production features across frontend and backend.',
           ],
           date: 'Oct 2018 - Nov 2021',
         },

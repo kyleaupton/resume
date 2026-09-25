@@ -8,13 +8,21 @@ import {
 } from '@react-pdf/renderer';
 import { contactInfo } from '@/data';
 import CustomLink from '@/components/Link';
-import { Phone, Envelope, LinkedIn, Globe, Location } from '@/icons';
+import { Phone, Envelope, LinkedIn, GitHub, Location } from '@/icons';
 import Separator from './Separator';
 import WorkExperience from './WorkExperience';
 import registerFonts from './fonts';
 import { s, colors } from './styles';
 
 registerFonts();
+
+const skills = [
+  { label: 'Languages', items: ['TypeScript', 'JavaScript', 'Go', 'Python', 'SQL', 'HTML', 'CSS'] },
+  { label: 'Frontend', items: ['Vue', 'Nuxt', 'React', 'Pinia', 'TanStack Query/Table', 'Tailwind', 'shadcn-vue', 'Vite', 'Electron'] },
+  { label: 'Backend & Data', items: ['Node.js', 'PostgreSQL', 'REST', 'OpenAPI', 'SSE'] },
+  { label: 'AI', items: ['LLM agents and tool calling', 'MCP', 'Streaming chat UIs', 'Claude Code and agent skills', 'Anthropic and OpenAI APIs'] },
+  { label: 'Testing & DevOps', items: ['Vitest', 'Playwright', 'Testcontainers', 'GitHub Actions', 'Docker', 'Kubernetes', 'AWS', 'Linux'] },
+];
 
 function SectionHeader({ title }: { title: string }) {
   return (
@@ -47,41 +55,39 @@ export default function PDF() {
   return (
     <Document title="Kyle Upton's Resume" author="Kyle Upton">
       <Page
-        size="A4"
-        style={[s.text, { gap: 10, padding: 36, paddingTop: 24 }]}
+        size="LETTER"
+        style={[s.text, { gap: 10, paddingHorizontal: 32, paddingTop: 24, paddingBottom: 28 }]}
       >
         {/* Header */}
         <View style={{ gap: 4 }}>
           <Text style={[s.name]}>Kyle Upton</Text>
-          <Text style={[s.subtitle]}>Senior Software Engineer</Text>
+          <Text style={[s.subtitle]}>
+            Senior Software Engineer · Full-Stack & AI · TypeScript, Vue, React
+          </Text>
 
-          <View style={{ gap: 4, marginTop: 2 }}>
-            <View style={{ flexDirection: 'row', gap: 14 }}>
-              <ContactItem
-                icon={<Location height={9} width={9} color={colors.icon} />}
-                text="Charlotte, NC"
-              />
-              <ContactItem
-                icon={<Phone height={9} width={9} color={colors.icon} />}
-                text={contactInfo.phone}
-              />
-              <ContactItem
-                icon={<Envelope height={9} width={9} color={colors.icon} />}
-                text={contactInfo.email}
-              />
-            </View>
-            <View style={{ flexDirection: 'row', gap: 14 }}>
-              <ContactLink
-                icon={<LinkedIn height={9} width={9} color={colors.icon} />}
-                url={contactInfo.linkedIn}
-                text={contactInfo.linkedIn}
-              />
-              <ContactLink
-                icon={<Globe height={9} width={9} color={colors.icon} />}
-                url={contactInfo.website}
-                text={contactInfo.website}
-              />
-            </View>
+          <View style={[s.textSm, { flexDirection: 'row', gap: 8, marginTop: 2 }]}>
+            <ContactItem
+              icon={<Location height={9} width={9} color={colors.icon} />}
+              text={contactInfo.location}
+            />
+            <ContactItem
+              icon={<Phone height={9} width={9} color={colors.icon} />}
+              text={contactInfo.phone}
+            />
+            <ContactItem
+              icon={<Envelope height={9} width={9} color={colors.icon} />}
+              text={contactInfo.email}
+            />
+            <ContactLink
+              icon={<LinkedIn height={9} width={9} color={colors.icon} />}
+              url={contactInfo.linkedIn}
+              text={contactInfo.linkedIn}
+            />
+            <ContactLink
+              icon={<GitHub height={9} width={9} color={colors.icon} />}
+              url={contactInfo.gitHub}
+              text={contactInfo.gitHub}
+            />
           </View>
         </View>
 
@@ -91,22 +97,37 @@ export default function PDF() {
           <WorkExperience />
         </View>
 
-        {/* Bottom: Skills + Education side-by-side */}
-        <View style={{ flexDirection: 'row', gap: 24 }}>
-          {/* Skills */}
-          <View style={{ flex: 65, gap: 4 }}>
-            <SectionHeader title="Skills" />
-            <Text>Go · TypeScript · JavaScript · Python · SQL · Java · Vue · React · Node.js · PostgreSQL · Docker · AWS · Nuxt · Tailwind · Electron · HTML · CSS · Git · GitHub Actions · REST APIs · Linux</Text>
-          </View>
+        {/* Skills and Education are stacked, not side-by-side, so resume
+            parsers that read line-by-line don't interleave the two columns. */}
 
-          {/* Education */}
-          <View style={{ flex: 35, gap: 4 }}>
-            <SectionHeader title="Education" />
-            <View>
+        {/* Skills */}
+        <View style={{ gap: 4 }}>
+          <SectionHeader title="Skills" />
+          <View>
+            {skills.map(({ label, items }) => (
+              <View key={label} style={{ flexDirection: 'row', gap: 4 }}>
+                <Text style={{ fontWeight: 'semibold' }}>{`${label}:`}</Text>
+                <Text>{items.join(' · ')}</Text>
+              </View>
+            ))}
+          </View>
+        </View>
+
+        {/* Education */}
+        <View style={{ gap: 4 }} wrap={false}>
+          <SectionHeader title="Education" />
+          <View
+            style={{
+              flexDirection: 'row',
+              justifyContent: 'space-between',
+              alignItems: 'center',
+            }}
+          >
+            <View style={{ flexDirection: 'row', gap: 4 }}>
               <Text style={{ fontWeight: 'semibold' }}>Kennesaw State University</Text>
-              <Text>B.S. Computer Science</Text>
-              <Text style={[s.textSm, s.textMuted]}>2018 - 2021</Text>
+              <Text>· B.S. Computer Science</Text>
             </View>
+            <Text style={[s.textSm, s.textMuted]}>2018 - 2021</Text>
           </View>
         </View>
       </Page>

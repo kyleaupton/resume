@@ -22,3 +22,6 @@ dist-ssr
 *.sw?
 
 .env
+
+# Private notes (experience inventory, job-specific drafts)
+notes/

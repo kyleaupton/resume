@@ -22,6 +22,10 @@ const registerFont = () => {
       },
     ],
   });
+
+  // Disable hyphenation so keywords are never split across lines,
+  // which breaks text extraction by resume parsers.
+  Font.registerHyphenationCallback((word) => [word]);
 };
 
 export default registerFont;
