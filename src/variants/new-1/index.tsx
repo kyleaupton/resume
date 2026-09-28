@@ -18,7 +18,7 @@ registerFonts();
 
 const skills = [
   { label: 'Languages', items: ['TypeScript', 'JavaScript', 'Go', 'Python', 'SQL', 'HTML', 'CSS'] },
-  { label: 'Frontend', items: ['Vue', 'Nuxt', 'React', 'Pinia', 'TanStack Query/Table', 'Tailwind', 'shadcn-vue', 'Vite', 'Electron'] },
+  { label: 'Frameworks & Libraries', items: ['Vue', 'Nuxt', 'React', 'Pinia', 'TanStack Query/Table', 'Tailwind', 'shadcn-vue', 'Vite', 'Electron'] },
   { label: 'Backend & Data', items: ['Node.js', 'PostgreSQL', 'REST', 'OpenAPI', 'SSE'] },
   { label: 'AI', items: ['LLM agents and tool calling', 'MCP', 'Streaming chat UIs', 'Claude Code and agent skills', 'Anthropic and OpenAI APIs'] },
   { label: 'Testing & DevOps', items: ['Vitest', 'Playwright', 'Testcontainers', 'GitHub Actions', 'Docker', 'Kubernetes', 'AWS', 'Linux'] },
